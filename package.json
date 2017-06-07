@@ -1,0 +1,31 @@
+{
+  "name": "ubc-clf8",
+  "version": "0.0.1",
+  "description": "Common Look and Feel framework for UBC",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UBCCM/ubc-clf8.git"
+  },
+  "keywords": [
+    "clf",
+    "ubc"
+  ],
+  "author": "UBC Communications & Marketing",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/UBCCM/ubc-clf8/issues"
+  },
+  "homepage": "https://github.com/UBCCM/ubc-clf8#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0"
+  }
+}
