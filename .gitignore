@@ -1,4 +1,2 @@
 node_modules/*
-npm-shrinkwrap.json
-package-lock.json
 .DS_Store
