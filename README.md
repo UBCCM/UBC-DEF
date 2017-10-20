@@ -17,8 +17,8 @@ It's for front-end developers who need a modern, minimal, unbiased framework for
 
 ### 2. Clone the repo and install dependencies
 1. Make a local copy of the git repo (via download, clone or the official [Github App](https://desktop.github.com).
-2. Using terminal or your cli, navigate inside the repo directory. 
-3. Run npm to install the necessary packages: 
+2. Using terminal or your CLI, navigate inside the repo directory. 
+3. Install the necessary packages: 
     `npm install`.
 
 ### 3. Run gulp
