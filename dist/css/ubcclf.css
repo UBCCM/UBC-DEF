@@ -405,27 +405,243 @@ template {
 [hidden] {
   display: none; }
 
-/**
- * Set up a decent box model on the root element
- */
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
 
-/**
- * Make all elements from the DOM inherit from the parent box-sizing
- * Since `*` has a specificity of 0, it does not override the `html` value
- * making all elements inheriting from the root box-sizing value
- * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
- */
 *,
 *::before,
 *::after {
   -webkit-box-sizing: inherit;
           box-sizing: inherit; }
 
-/**
- * Basic typography style for copy text
- */
+html {
+  font-family: sans-serif;
+  font-size: 100%; }
+
+p {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  line-height: 1.5rem; }
+
+ul,
+ol {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem; }
+  ul li,
+  ol li {
+    line-height: 1.5rem; }
+  ul ul,
+  ul ol,
+  ol ul,
+  ol ol {
+    margin-top: 0;
+    margin-bottom: 0; }
+
+blockquote {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5rem; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading-one,
+.heading-two,
+.heading-three,
+.heading-four,
+.heading-five,
+.heading-six {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  line-height: 1.5rem;
+  font-family: sans-serif; }
+
+h1,
+.heading-one {
+  margin-top: 3rem;
+  line-height: 7.5rem;
+  font-size: 6.25rem; }
+
+h2,
+.heading-two {
+  margin-top: 3rem;
+  line-height: 6rem;
+  font-size: 5rem; }
+
+h3,
+.heading-three {
+  margin-top: 3rem;
+  line-height: 4.5rem;
+  font-size: 3.75rem; }
+
+h4,
+.heading-four {
+  margin-top: 3rem;
+  line-height: 3rem;
+  font-size: 2.5rem; }
+
+h5,
+.heading-five {
+  font-size: 1.25rem; }
+
+h6,
+.heading-six {
+  font-size: 0.83333rem; }
+
+table {
+  margin-top: 1.5rem;
+  border-collapse: collapse;
+  border-spacing: 0px; }
+
+td,
+th {
+  padding: 0;
+  line-height: 24px; }
+
+code,
+.text--code {
+  vertical-align: bottom; }
+
+.text--lead {
+  font-size: 1.25rem; }
+
+.text--small {
+  font-size: 0.9375rem; }
+
+.text--center {
+  text-align: center; }
+
+.text--right {
+  text-align: right; }
+
+.text--left {
+  text-align: left; }
+
+.text--uppercase {
+  text-transform: uppercase; }
+
+.text--lowercase {
+  text-transform: lowercase; }
+
+.text--normalcase {
+  text-transform: none; }
+
+.text--hug {
+  margin-top: 0; }
+
+.nav-label {
+  display: inline-block;
+  position: absolute;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 45px;
+  height: 45px;
+  font-size: 0;
+  text-indent: -200%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: background 0.2s;
+  -o-transition: background 0.2s;
+  transition: background 0.2s;
+  top: 1rem;
+  right: 1rem;
+  background-color: orange; }
+
+.nav-label:focus {
+  outline: none; }
+
+.nav-label span {
+  display: block;
+  position: absolute;
+  top: 21px;
+  left: 10px;
+  right: 10px;
+  height: 3px;
+  background: #000; }
+
+.nav-label span::before,
+.nav-label span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+  content: ""; }
+
+.nav-label span::before {
+  top: -8px; }
+
+.nav-label span::after {
+  bottom: -8px; }
+
+.nav-label-close {
+  display: block;
+  width: 100%;
+  padding: .5rem;
+  font-size: 2rem;
+  width: 300px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
+
+.nav-label-close:hover {
+  color: #fff;
+  cursor: pointer; }
+
+:root {
+  --menutransition: transform 0.195s cubic-bezier(0.694, 0.0482, 0.335, 1); }
+
+.grid-wrapper {
+  -webkit-transition: var(--menutransition);
+  -o-transition: var(--menutransition);
+  transition: var(--menutransition);
+  /*will-change: transform;*/
+  overflow-x: hidden;
+  position: relative;
+  background-color: #fff;
+  /* add a background colour to prevent seeing the menu transition on load */ }
+
+.nav-trigger {
+  display: none;
+  margin: 0; }
+
+.menu--push-right {
+  -webkit-transform: translate3d(300px, 0, 0);
+          transform: translate3d(300px, 0, 0);
+  width: 300px;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+  /* put the menu below the wrapper on load so we don't see the triggered transition */
+  background-color: #67b5d1;
+  overflow-y: overlay;
+  overflow-x: hidden;
+  -webkit-transition: var(--menutransition);
+  -o-transition: var(--menutransition);
+  transition: var(--menutransition);
+  /*will-change: transform;*/
+  top: 0;
+  right: 0; }
+
+.nav-trigger:checked ~ .grid-wrapper {
+  -webkit-transform: translate3d(-300px, 0, 0);
+          transform: translate3d(-300px, 0, 0); }
+
+.nav-trigger:checked ~ .menu--push-right {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  /* width minus 20px to account for scroll area in safari */
+  z-index: 200;
+  /* move the menu above the wrapper */ }
 
 /*# sourceMappingURL=ubcclf.css.map */
