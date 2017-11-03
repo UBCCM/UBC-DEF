@@ -1,3 +1,5 @@
+[![Known Vulnerabilities](https://snyk.io/test/github/UBCCM/ubc-def/badge.svg)](https://snyk.io/test/github/UBCCM/ubc-def) [![Build Status](https://travis-ci.org/UBCCM/UBC-DEF.svg?branch=dev)](https://travis-ci.org/UBCCM/UBC-DEF)
+
 # UBC Digital Experience Framework (UBCDEF)
 ### What is this?
 This is [insert description here]
