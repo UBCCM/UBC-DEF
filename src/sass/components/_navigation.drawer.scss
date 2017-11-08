@@ -1,52 +1,53 @@
-
 $menu-break: 320px;
 $menu-width: 300px;
 $menu-height: 60px;
 $wrapper-background-color: #fff;
 $nav-background-color: #67b5d1;
 
-:root {
-  --menutransition: transform 0.195s cubic-bezier(.694, .0482, .335, 1);
-}
 
+// https://github.com/sasstools/sass-lint/issues/877
+// ugly hack to get around sass-lint not understanding css variables.
+:root {
+	#{--menutransition}: transform .195s cubic-bezier(.694, .0482, .335, 1);
+}
 
 .grid-wrapper {
-  transition: var(--menutransition);
-  /*will-change: transform;*/
-  overflow-x: hidden;
-  position: relative;
-  background-color: $wrapper-background-color;
-  /* add a background colour to prevent seeing the menu transition on load */
-}
-
-.nav-trigger {
-  display: none;
-  margin: 0;
+	position: relative;
+	transition: var(--menutransition);
+	// will-change: transform;
+	background-color: $wrapper-background-color;
+	// add a background colour to prevent seeing the menu transition on load
+	overflow-x: hidden;
 }
 
 .menu--push-right {
-  transform: translate3d($menu-width, 0, 0);
-  width: $menu-width;
-  height: 100%;
-  position: fixed;
-  z-index: -1;
-  /* put the menu below the wrapper on load so we don't see the triggered transition */
-  background-color: $nav-background-color;
-  overflow-y: overlay;
-  overflow-x: hidden;
-  transition: var(--menutransition);
-  /*will-change: transform;*/
-  top: 0;
-  right: 0;
+	position: fixed;
+	top: 0;
+	right: 0;
+	transform: translate3d($menu-width, 0, 0);
+	transition: var(--menutransition);
+	z-index: -1;
+	// put the menu below the wrapper on load so we don't see the triggered transition
+	background-color: $nav-background-color;
+	width: $menu-width;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: overlay;
+	// will-change: transform;
 }
 
-.nav-trigger:checked~.grid-wrapper {
-  transform: translate3d(-$menu-width, 0, 0);
-}
+.nav-trigger {
+	display: none;
+	margin: 0;
 
-.nav-trigger:checked~.menu--push-right {
-  transform: translate3d(0, 0, 0);
-  /* width minus 20px to account for scroll area in safari */
-  z-index: 200;
-  /* move the menu above the wrapper */
+	&:checked~.grid-wrapper {
+		transform: translate3d(-$menu-width, 0, 0);
+	}
+
+	&:checked~.menu--push-right {
+		transform: translate3d(0, 0, 0);
+		// width minus 20px to account for scroll area in safari
+		z-index: 200;
+		// move the menu above the wrapper
+	}
 }

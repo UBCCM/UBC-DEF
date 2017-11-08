@@ -65,16 +65,20 @@ rules:
 
   # Style Guide
   border-zero: 1
-  brace-style: 1
+  brace-style:
+  	- 1
   clean-import-paths: 1
   empty-args: 1
   hex-length: 1
   hex-notation: 1
-  indentation: 1
+  indentation:
+    - 2
+    -
+      size: tab
   leading-zero: 1
   nesting-depth: 1
   # http://rhodesmill.org/brandon/2011/concentric-css/
-  property-sort-order: 
+  property-sort-order:
     - 2
     -
       order:
@@ -83,7 +87,7 @@ rules:
 
         # box-sizing
         - 'box-sizing'
-        
+
         # position
         - 'display'
         - 'position'
@@ -183,7 +187,7 @@ rules:
         - 'outline-width'
         - 'outline-style'
         - 'outline-color'
-      
+
         # border
         - 'border'
         - 'border-top'
@@ -241,7 +245,7 @@ rules:
         # object-fit
         - 'object-fit'
         - 'object-position'
-        
+
         # cursor
         - 'cursor'
 

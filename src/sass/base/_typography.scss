@@ -1,17 +1,15 @@
 // -----------------------------------------------------------------------------
 // This file contains default typographic styles for copy text.
 // -----------------------------------------------------------------------------
-
 // From Typebase.scss v0.1.0 | https://github.com/devinhunt/typebase.css/blob/master/src/typebase.scss
-
 // Typesetting variables.
-$base-font-size: 16;  // in pixels. This will result in 16px on desktop
-$base-line-height: 1.5; // how large the line height is as a multiple of font size
-$leading: $base-line-height * 1rem;
+$base-font-size: 16; // as an integer. We convert the unit later. The default will result in 16px on desktop
+$base-line-height: 1.5; // as an integer. Defines how high the line height is as a multiple of font size
+$leading: $base-line-height * 1rem; // multiply the line height and add a unit. Defaults to rem.
 $default-typeface: sans-serif;
 $alternate-typeface: sans-serif;
 // TYPE SCALES:
-// i.067 Minor Second
+// 1.067 Minor Second
 // 1.125 Major Second
 // 1.200 Minor Third
 // 1.250 Major Third
@@ -19,41 +17,43 @@ $alternate-typeface: sans-serif;
 // 1.414 Augmented Fourth
 // 1.500 Perfect Fifth
 // 1.618 Golden Ratio
-$scale: 1.250;
+$scale: 1.25;
 
+//
 // Default
+//
 html {
-  font-family: $default-typeface;
-  font-size: $base-font-size / 16 * 100%;
+	font-family: $default-typeface;
+	font-size: $base-font-size / 16 * 100%;
 }
 
 // Copy & Lists
 p {
-  margin-top: $leading;
-  margin-bottom: 0;
-  line-height: $leading;
+	margin-top: $leading;
+	margin-bottom: 0;
+	line-height: $leading;
 }
 
 ul,
 ol {
-  margin-top: $leading;
-  margin-bottom: $leading;
+	margin-top: $leading;
+	margin-bottom: $leading;
 
-  li {
-    line-height: $leading;
-  }
+	li {
+		line-height: $leading;
+	}
 
-  ul,
-  ol {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
+	ul,
+	ol {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
 }
 
 blockquote {
-  margin-top: $leading;
-  margin-bottom: $leading;
-  line-height: $leading;
+	margin-top: $leading;
+	margin-bottom: $leading;
+	line-height: $leading;
 }
 
 // Headings
@@ -69,105 +69,105 @@ h6,
 .heading-four,
 .heading-five,
 .heading-six {
-  margin-top: $leading;
-  margin-bottom: 0;
-  line-height: $leading;
-  font-family: $alternate-typeface;
+	margin-top: $leading;
+	margin-bottom: 0;
+	line-height: $leading;
+	font-family: $alternate-typeface;
 }
 
 h1,
 .heading-one {
-  margin-top: 2 * $leading;
-  line-height: 5 * $leading;
-  font-size: 5 * $scale * 1rem;
+	margin-top: 2 * $leading;
+	line-height: 5 * $leading;
+	font-size: 5 * $scale * 1rem;
 }
 
 h2,
 .heading-two {
-  margin-top: 2 * $leading;
-  line-height: 4 * $leading;
-  font-size: 4 * $scale * 1rem;
+	margin-top: 2 * $leading;
+	line-height: 4 * $leading;
+	font-size: 4 * $scale * 1rem;
 }
 
 h3,
 .heading-three {
-  margin-top: 2 * $leading;
-  line-height: 3 * $leading;
-  font-size: 3 * $scale * 1rem;
+	margin-top: 2 * $leading;
+	line-height: 3 * $leading;
+	font-size: 3 * $scale * 1rem;
 }
 
 h4,
 .heading-four {
-  margin-top: 2 * $leading;
-  line-height: 2 * $leading;
-  font-size: 2 * $scale * 1rem;
+	margin-top: 2 * $leading;
+	line-height: 2 * $leading;
+	font-size: 2 * $scale * 1rem;
 }
 
 h5,
 .heading-five {
-  font-size: 1 * $scale * 1rem;
+	font-size: 1 * $scale * 1rem;
 }
 
 h6,
 .heading-six {
-  font-size: $scale / 1.5 * 1rem;
+	font-size: $scale / 1.5 * 1rem;
 }
 
 // Tables
 table {
-  margin-top: $leading;
-  border-collapse: collapse;
-  border-spacing: 0px;
+	margin-top: $leading;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 td,
 th {
-  padding: 0;
-  line-height: $base-line-height * $base-font-size - 0px;
+	padding: 0;
+	line-height: $base-line-height * $base-font-size - 0px;
 }
 
 // Code blocks
 code,
 .text--code {
-  // Forces text to constrain to the line-height. Not ideal, but works.
-  vertical-align: bottom;
+	// Forces text to constrain to the line-height. Not ideal, but works.
+	vertical-align: bottom;
 }
 
 // Leading paragraph text
 .text--lead {
-  font-size: $scale * 1rem;
+	font-size: $scale * 1rem;
 }
 
 // Text variants
 .text--small {
-  font-size: ($scale * .75rem);
+	font-size: ($scale * .75rem);
 }
 
 .text--center {
-  text-align: center;
+	text-align: center;
 }
 
 .text--right {
-  text-align: right;
+	text-align: right;
 }
 
 .text--left {
-  text-align: left;
+	text-align: left;
 }
 
 .text--uppercase {
-  text-transform: uppercase;
+	text-transform: uppercase;
 }
 
 .text--lowercase {
-  text-transform: lowercase;
+	text-transform: lowercase;
 }
 
 .text--normalcase {
-  text-transform: none;
+	text-transform: none;
 }
 
 // Hug the block above you
 .text--hug {
-  margin-top: 0;
+	margin-top: 0;
 }
