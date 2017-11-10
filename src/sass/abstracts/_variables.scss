@@ -67,5 +67,5 @@ $base-url: '/assets/' !default;
 // ugly hack to get around sass-lint not understanding css variables.
 :root {
 	#{--menu--transition}: transform .195s cubic-bezier(.694, .0482, .335, 1);
-	#{--brand-color}: hsla(211, 100%, 14%, 1);
+	#{--brand-color}: #002347;
 }
