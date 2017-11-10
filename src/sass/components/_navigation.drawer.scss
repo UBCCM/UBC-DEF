@@ -1,50 +1,50 @@
-$menu-break: 320px;
-$menu-width: 300px;
-$menu-height: 60px;
-$wrapper-background-color: #fff;
-$nav-background-color: #67b5d1;
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the navigation drawer component.
+// -----------------------------------------------------------------------------
+
+// local variables
+$menu--break: 320px;
+$menu--width: 300px;
+$menu--height: 60px;
+$wrapper--background-color: #fff;
+$nav--background-color: #67b5d1;
+$menu--transition: var(--menu--transition);
 
 
-// https://github.com/sasstools/sass-lint/issues/877
-// ugly hack to get around sass-lint not understanding css variables.
-:root {
-	#{--menutransition}: transform .195s cubic-bezier(.694, .0482, .335, 1);
-}
-
-.grid-wrapper {
+.#{$namespace}grid-wrapper {
 	position: relative;
-	transition: var(--menutransition);
+	transition: $menu--transition;
 	// will-change: transform;
-	background-color: $wrapper-background-color;
+	background-color: $wrapper--background-color;
 	// add a background colour to prevent seeing the menu transition on load
 	overflow-x: hidden;
 }
 
-.menu--push-right {
+.#{$namespace}menu--push-right {
 	position: fixed;
 	top: 0;
 	right: 0;
-	transform: translate3d($menu-width, 0, 0);
-	transition: var(--menutransition);
+	transform: translate3d($menu--width, 0, 0);
+	transition: $menu--transition;
 	z-index: -1;
 	// put the menu below the wrapper on load so we don't see the triggered transition
-	background-color: $nav-background-color;
-	width: $menu-width;
+	background-color: $nav--background-color;
+	width: $menu--width;
 	height: 100%;
 	overflow-x: hidden;
 	overflow-y: overlay;
 	// will-change: transform;
 }
 
-.nav-trigger {
+.#{$namespace}menu-trigger {
 	display: none;
 	margin: 0;
 
-	&:checked~.grid-wrapper {
-		transform: translate3d(-$menu-width, 0, 0);
+	&:checked~.#{$namespace}grid-wrapper {
+		transform: translate3d(-$menu--width, 0, 0);
 	}
 
-	&:checked~.menu--push-right {
+	&:checked~.#{$namespace}menu--push-right {
 		transform: translate3d(0, 0, 0);
 		// width minus 20px to account for scroll area in safari
 		z-index: 200;

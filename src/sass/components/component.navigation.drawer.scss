@@ -1,2 +1,9 @@
+// -----------------------------------------------------------------------------
+// This file is only used to compile the component individually.
+// -----------------------------------------------------------------------------
+// We need to redefine the character set and import the global variables.
+@charset 'UTF-8';
+
 @import
+'../abstracts/variables',
 '_navigation.drawer';

@@ -1,3 +1,7 @@
+:root {
+  --menu--transition: transform 0.195s cubic-bezier(0.694, 0.0482, 0.335, 1);
+  --brand-color: #002347; }
+
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -495,7 +499,7 @@ h6,
 table {
   margin-top: 1.5rem;
   border-collapse: collapse;
-  border-spacing: 0px; }
+  border-spacing: 0; }
 
 td,
 th {
@@ -533,115 +537,96 @@ code,
 .text--hug {
   margin-top: 0; }
 
-.nav-label {
+.menu-label {
   display: inline-block;
   position: absolute;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  width: 45px;
-  height: 45px;
-  font-size: 0;
-  text-indent: -200%;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  border-radius: 3px;
-  border: none;
-  cursor: pointer;
+  top: 1rem;
+  right: 1rem;
   -webkit-transition: background 0.2s;
   -o-transition: background 0.2s;
   transition: background 0.2s;
-  top: 1rem;
-  right: 1rem;
-  background-color: orange; }
+  margin: 0;
+  border: 0;
+  border-radius: 3px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: var(--brand-color);
+  cursor: pointer;
+  padding: 0;
+  width: 45px;
+  height: 45px;
+  overflow: hidden;
+  text-indent: -200%;
+  font-size: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; }
+  .menu-label:focus {
+    outline: none; }
+  .menu-label span {
+    display: block;
+    position: absolute;
+    top: 21px;
+    right: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    height: 3px; }
+    .menu-label span::before, .menu-label span::after {
+      display: block;
+      position: absolute;
+      left: 0;
+      background-color: rgba(255, 255, 255, 0.5);
+      width: 100%;
+      height: 3px;
+      content: ''; }
+    .menu-label span::before {
+      top: -8px; }
+    .menu-label span::after {
+      bottom: -8px; }
 
-.nav-label:focus {
-  outline: none; }
-
-.nav-label span {
+.menu-label-close {
   display: block;
-  position: absolute;
-  top: 21px;
-  left: 10px;
-  right: 10px;
-  height: 3px;
-  background: #000; }
-
-.nav-label span::before,
-.nav-label span::after {
-  position: absolute;
-  display: block;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: #000;
-  content: ""; }
-
-.nav-label span::before {
-  top: -8px; }
-
-.nav-label span::after {
-  bottom: -8px; }
-
-.nav-label-close {
-  display: block;
-  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   padding: .5rem;
-  font-size: 2rem;
   width: 300px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
-
-.nav-label-close:hover {
-  color: #fff;
-  cursor: pointer; }
-
-:root {
-  --menutransition: transform 0.195s cubic-bezier(0.694, 0.0482, 0.335, 1); }
+  font-size: 2rem; }
+  .menu-label-close:hover {
+    cursor: pointer;
+    color: white; }
 
 .grid-wrapper {
-  -webkit-transition: var(--menutransition);
-  -o-transition: var(--menutransition);
-  transition: var(--menutransition);
-  /*will-change: transform;*/
-  overflow-x: hidden;
   position: relative;
+  -webkit-transition: var(--menu--transition);
+  -o-transition: var(--menu--transition);
+  transition: var(--menu--transition);
   background-color: #fff;
-  /* add a background colour to prevent seeing the menu transition on load */ }
-
-.nav-trigger {
-  display: none;
-  margin: 0; }
+  overflow-x: hidden; }
 
 .menu--push-right {
+  position: fixed;
+  top: 0;
+  right: 0;
   -webkit-transform: translate3d(300px, 0, 0);
           transform: translate3d(300px, 0, 0);
+  -webkit-transition: var(--menu--transition);
+  -o-transition: var(--menu--transition);
+  transition: var(--menu--transition);
+  z-index: -1;
+  background-color: #67b5d1;
   width: 300px;
   height: 100%;
-  position: fixed;
-  z-index: -1;
-  /* put the menu below the wrapper on load so we don't see the triggered transition */
-  background-color: #67b5d1;
-  overflow-y: overlay;
   overflow-x: hidden;
-  -webkit-transition: var(--menutransition);
-  -o-transition: var(--menutransition);
-  transition: var(--menutransition);
-  /*will-change: transform;*/
-  top: 0;
-  right: 0; }
+  overflow-y: overlay; }
 
-.nav-trigger:checked ~ .grid-wrapper {
-  -webkit-transform: translate3d(-300px, 0, 0);
-          transform: translate3d(-300px, 0, 0); }
-
-.nav-trigger:checked ~ .menu--push-right {
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-  /* width minus 20px to account for scroll area in safari */
-  z-index: 200;
-  /* move the menu above the wrapper */ }
+.menu-trigger {
+  display: none;
+  margin: 0; }
+  .menu-trigger:checked ~ .grid-wrapper {
+    -webkit-transform: translate3d(-300px, 0, 0);
+            transform: translate3d(-300px, 0, 0); }
+  .menu-trigger:checked ~ .menu--push-right {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    z-index: 200; }
 
 /*# sourceMappingURL=styles-all.dev.css.map */

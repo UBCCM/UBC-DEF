@@ -1,3 +1,7 @@
+:root {
+  --menu--transition: transform 0.195s cubic-bezier(0.694, 0.0482, 0.335, 1);
+  --brand-color: #002347; }
+
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -495,7 +499,7 @@ h6,
 table {
   margin-top: 1.5rem;
   border-collapse: collapse;
-  border-spacing: 0px; }
+  border-spacing: 0; }
 
 td,
 th {

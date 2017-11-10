@@ -1,47 +1,40 @@
 :root {
-  --menutransition: transform 0.195s cubic-bezier(0.694, 0.0482, 0.335, 1); }
+  --menu--transition: transform 0.195s cubic-bezier(0.694, 0.0482, 0.335, 1);
+  --brand-color: #002347; }
 
 .grid-wrapper {
-  -webkit-transition: var(--menutransition);
-  -o-transition: var(--menutransition);
-  transition: var(--menutransition);
-  /*will-change: transform;*/
-  overflow-x: hidden;
   position: relative;
+  -webkit-transition: var(--menu--transition);
+  -o-transition: var(--menu--transition);
+  transition: var(--menu--transition);
   background-color: #fff;
-  /* add a background colour to prevent seeing the menu transition on load */ }
-
-.nav-trigger {
-  display: none;
-  margin: 0; }
+  overflow-x: hidden; }
 
 .menu--push-right {
+  position: fixed;
+  top: 0;
+  right: 0;
   -webkit-transform: translate3d(300px, 0, 0);
           transform: translate3d(300px, 0, 0);
+  -webkit-transition: var(--menu--transition);
+  -o-transition: var(--menu--transition);
+  transition: var(--menu--transition);
+  z-index: -1;
+  background-color: #67b5d1;
   width: 300px;
   height: 100%;
-  position: fixed;
-  z-index: -1;
-  /* put the menu below the wrapper on load so we don't see the triggered transition */
-  background-color: #67b5d1;
-  overflow-y: overlay;
   overflow-x: hidden;
-  -webkit-transition: var(--menutransition);
-  -o-transition: var(--menutransition);
-  transition: var(--menutransition);
-  /*will-change: transform;*/
-  top: 0;
-  right: 0; }
+  overflow-y: overlay; }
 
-.nav-trigger:checked ~ .grid-wrapper {
-  -webkit-transform: translate3d(-300px, 0, 0);
-          transform: translate3d(-300px, 0, 0); }
-
-.nav-trigger:checked ~ .menu--push-right {
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-  /* width minus 20px to account for scroll area in safari */
-  z-index: 200;
-  /* move the menu above the wrapper */ }
+.menu-trigger {
+  display: none;
+  margin: 0; }
+  .menu-trigger:checked ~ .grid-wrapper {
+    -webkit-transform: translate3d(-300px, 0, 0);
+            transform: translate3d(-300px, 0, 0); }
+  .menu-trigger:checked ~ .menu--push-right {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    z-index: 200; }
 
 /*# sourceMappingURL=component.navigation.drawer.dev.css.map */

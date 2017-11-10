@@ -1,32 +1,36 @@
-// Variables
-$menu-width: 300px;
-$button-width: 45px; // The width of the button area
-$button-height: 45px; // The height of the button area
-$bar-thickness: 3px; // The thickness of the button bars
-$button-padding: 10px; // The left/right padding between button area and bars.
-$button-bar-space: 5px; // The spacing between button bars
-$button-transistion-duration: .2s; // The transition duration
-$button-color: #000;
-$button-background-color: #ffa500;
-$close-button-border-bottom-color: rgba(255, 255, 255, .5);
-$close-button-hover-color:	#fff;
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the hamburger button component.
+// -----------------------------------------------------------------------------
+
+// local variables
+$button--width: 45px; // The width of the button area
+$button--height: 45px; // The height of the button area
+$bar--thickness: 3px; // The thickness of the button bars
+$button--padding: 10px; // The left/right padding between button area and bars.
+$button--bar-space: 5px; // The spacing between button bars
+$button--transistion-duration: .2s; // The transition duration
+$button--color: hsla(0, 0%, 100%, .5);
+$button--background-color: $brand-color;
+$close-button--width: 300px;
+$close-button--border-bottom-color: hsla(0, 0%, 100%, .5);
+$close-button--hover-color:	hsla(0, 0%, 100%, 1);
 
 
-.nav-label {
+.#{$namespace}menu-label {
 	display: inline-block;
 	position: absolute;
 	top: 1rem;
 	right: 1rem;
-	transition: background $button-transistion-duration;
+	transition: background $button--transistion-duration;
 	margin: 0;
 	border: 0;
 	border-radius: 3px;
 	box-shadow: none;
-	background-color: $button-background-color;
+	background-color: $button--background-color;
 	cursor: pointer;
 	padding: 0;
-	width: $button-width;
-	height: $button-height;
+	width: $button--width;
+	height: $button--height;
 	overflow: hidden;
 	text-indent: -200%;
 	font-size: 0;
@@ -39,42 +43,42 @@ $close-button-hover-color:	#fff;
 	span {
 		display: block;
 		position: absolute;
-		top: ($button-height / 2) - ($bar-thickness / 2);
-		right: $button-padding;
-		left: $button-padding;
-		background: $button-color;
-		height: $bar-thickness;
+		top: ($button--height / 2) - ($bar--thickness / 2);
+		right: $button--padding;
+		left: $button--padding;
+		background: $button--color;
+		height: $bar--thickness;
 
 		&::before,
 		&::after {
 			display: block;
 			position: absolute;
 			left: 0;
-			background-color: $button-color;
+			background-color: $button--color;
 			width: 100%;
-			height: $bar-thickness;
+			height: $bar--thickness;
 			content: '';
 		}
 
 		&::before {
-			top: -$bar-thickness - $button-bar-space;
+			top: -$bar--thickness - $button--bar-space;
 		}
 
 		&::after {
-			bottom: -$bar-thickness - $button-bar-space;
+			bottom: -$bar--thickness - $button--bar-space;
 		}
 	}
 }
 
-.nav-label-close {
+.#{$namespace}menu-label-close {
 	display: block;
-	border-bottom: 1px solid $close-button-border-bottom-color;
+	border-bottom: 1px solid $close-button--border-bottom-color;
 	padding: .5rem;
-	width: $menu-width;
+	width: $close-button--width;
 	font-size: 2rem;
 
 	&:hover {
 		cursor: pointer;
-		color: $close-button-hover-color;
+		color: $close-button--hover-color;
 	}
 }
