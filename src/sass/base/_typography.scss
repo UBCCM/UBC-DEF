@@ -1,3 +1,177 @@
 /**
- * Basic typography style for copy text
- */
+* Basic typography styles
+*/
+
+/*
+Variables
+*/
+// base font size - is later converted to add units
+$base-font-size: 16;
+$base-line-height: 1.5
+$leading: $base-line-height * 1rem;
+$type-scale: 1.414;
+
+/*
+Based on Typebase v0.1.0 | MIT License
+https://github.com/devinhunt/typebase.css
+*/
+
+/*
+Generally, margin is added ABOVE the element, because space below is conditional upon what follows (ie. p, heading, list).
+This allows us to avoid ugly negative margin hacks to get elements closer to one another - we can use the single `.text--hug` utility class
+*/
+
+html {
+font-family: sans-serif;
+-webkit-font-smoothing: antialiased;
+}
+
+@media (max-width: 700px) {
+    html {
+        /* set base to 14px - http://pxtoem.com */
+        font-size: 87.5%;
+    }
+}
+
+@media (min-width: 1400px) {
+    html {
+        /* set base to 20px - http://pxtoem.com */
+        font-size: 125%;
+    }
+}
+
+/* Copy */
+p {
+    line-height: $leading;
+    margin-top: $leading;
+    margin-bottom: 0;
+}
+
+/* Lists */
+ul,
+ol {
+    margin-top: $leading;
+    margin-bottom: $leading;
+}
+
+ul li,
+ol li {
+    line-height: $leading;
+}
+
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Headings */
+/* Additional classes let base heading styles be applied to any text element */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading-one,
+.heading-two,
+.heading-three,
+.heading-four,
+.heading-five,
+.heading-six {
+    margin-top: $leading;
+    margin-bottom: 0;
+    line-height: $leading;
+}
+
+h1,
+.heading-one {
+    font-size: calc(3 * $type-scale * 1rem);
+    line-height: calc(3 * $leading);
+    margin-top: calc(2 * $leading);
+}
+
+h2,
+.heading-two {
+    font-size: calc(2 * $type-scale * 1rem);
+    line-height: calc(2 * $leading);
+    margin-top: calc(2 * $leading);
+}
+
+h3,
+.heading-three {
+    font-size: calc(1 * $type-scale * 1rem);
+}
+
+/* --scale is abandoned at this point as the changes are too drastic */
+h4,
+.heading-four {
+    font-size: 1rem;
+}
+
+h5,
+.heading-five {
+    font-size: .875rem;
+}
+
+h6,
+.heading-six {
+    font-size: .75rem;
+}
+
+/* Tables */
+/* These styles currently do not preserve vertical rhythmn */
+table {
+    margin-top: $leading;
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    padding: 0;
+    line-height: calc($base-line-height * $base-font-size - 0px);
+}
+
+/* Code and monospace */
+code {
+    vertical-align: bottom;
+}
+
+pre {
+    margin: $leading;
+    line-height: $leading;
+}
+
+/* Blockquotes */
+blockquote {
+    line-height: $leading;
+    margin-top: $leading;
+    margin-bottom: $leading;
+}
+
+/* Horizontal Rule */
+hr {
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    margin-top: $leading;
+    margin-bottom: calc($leading - 1px);
+}
+
+/* Leading paragraph text */
+.text--lead {
+    font-size: calc($type-scale * 1rem);
+}
+
+/* Hug the text above you */
+.text--hug {
+    margin-top: 0;
+}
+
+/* Utility to show grid */
+.show-grid {
+    background-size: 100% $leading;
+    background-image: linear-gradient(to bottom, #ccc 0%, transparent 4%,transparent 100%);
+}

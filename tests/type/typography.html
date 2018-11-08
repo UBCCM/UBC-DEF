@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Typography</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <style>
+    /* 
+    Based on Typebase v0.1.0 | MIT License
+    https://github.com/devinhunt/typebase.css 
+    */
+
+    /* 
+    Generally, margin is added ABOVE the element, because space below is conditional upon what follows (ie. p, heading, list).
+    This allows us to avoid ugly negative margin hacks to get elements closer to one another - we can use the single `.text--hug` utility class */
+
+    :root {
+      /* Base font size in pixels*/
+      --base-font-size: 16;
+      /* Line height as a multiple of font size */
+      --base-line-height: 1.5;
+      --leading: calc(var(--base-line-height) * 1rem);
+      /* Rate of growth for headings */
+      /* augmented fourth - https://type-scale.com */
+      --scale: 1.414;
+    }
+
+    html {
+      font-family: sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    @media (max-width: 700px) {
+      html {
+        /* set base to 14px - http://pxtoem.com */
+        font-size: 87.5%;
+      }
+    }
+
+    @media (min-width: 1400px) {
+      html {
+        /* set base to 20px - http://pxtoem.com */
+        font-size: 125%;
+      }
+    }
+
+    /* Copy */
+    p {
+      line-height: var(--leading);
+      margin-top: var(--leading);
+      margin-bottom: 0;
+    }
+
+    /* Lists */
+    ul,
+    ol {
+      margin-top: var(--leading);
+      margin-bottom: var(--leading);
+    }
+
+    ul li,
+    ol li {
+      line-height: var(--leading);
+    }
+
+    ul ul,
+    ol ul,
+    ul ol,
+    ol ol {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    /* Headings */
+    /* Additional classes let base heading styles be applied to any text element */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .heading-one,
+    .heading-two,
+    .heading-three,
+    .heading-four,
+    .heading-five,
+    .heading-six {
+      margin-top: var(--leading);
+      margin-bottom: 0;
+      line-height: var(--leading);
+    }
+
+    h1,
+    .heading-one {
+      font-size: calc(3 * var(--scale) * 1rem);
+      line-height: calc(3 * var(--leading));
+      margin-top: calc(2 * var(--leading));
+    }
+
+    h2,
+    .heading-two {
+      font-size: calc(2 * var(--scale) * 1rem);
+      line-height: calc(2 * var(--leading));
+      margin-top: calc(2 * var(--leading));
+    }
+
+    h3,
+    .heading-three {
+      font-size: calc(1 * var(--scale) * 1rem);
+    }
+
+    h4,
+    .heading-four {
+      font-size: calc(var(--scale) / 2 * 1rem);
+      font-size: 1rem;
+    }
+
+    h5,
+    .heading-five {
+      font-size: calc(var(--scale) / 3 * 1rem);
+      font-size: .875rem;
+    }
+
+    h6,
+    .heading-six {
+      font-size: calc(var(--scale) / 4 * 1rem);
+      font-size: .75rem;
+    }
+
+    /* Tables */
+    /* These styles currently do not preserve vertical rhythmn */
+    table {
+      margin-top: var(--leading);
+      border-spacing: 0px;
+      border-collapse: collapse;
+    }
+
+    td,
+    th {
+      padding: 0;
+      line-height: calc(var(--base-line-height) * var(--base-font-size) - 0px);
+    }
+
+    /* Code and monospace */
+    code {
+      vertical-align: bottom;
+    }
+
+    pre {
+      margin: var(--leading);
+      line-height: var(--leading);
+    }
+
+    /* Blockquotes */
+    blockquote {
+      line-height: var(--leading);
+      margin-top: var(--leading);
+      margin-bottom: var(--leading);
+    }
+
+    /* Horizontal Rule */
+    hr {
+      border-style: solid;
+      border-width: 0 0 1px 0;
+      margin-top: var(--leading);
+      margin-bottom: calc(var(--leading) - 1px);
+    }
+
+    /* Leading paragraph text */
+    .text--lead {
+      font-size: calc(var(--scale) * 1rem);
+    }
+
+    /* Hug the text above you */
+    .text--hug {
+      margin-top: 0;
+    }
+
+    /* Utility to show grid */
+    .show-grid {
+      background-size: 100% var(--leading);
+      background-image: linear-gradient(to bottom, #ccc 0%, transparent 4%,
+        transparent 100%);
+    }
+  </style>
+</head>
+
+<body class="full-width">
+  <div id="pushed-content" class="nav-panel--push-left expand">
+    <div class="show-grid">
+      <main class="container mx-auto px-4 pb-12">
+        <h1 class="heading-one">Typography [h1]</h1>
+        <p class="text--lead">[p.text--lead] Our student programs are positioning Canada for continued leadership in quantum materials by giving undergraduate and graduate students opportunities to learn from experts and acquire meaningful research experience.</p>
+        <p>[p] Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <a href="#\">quis nostrud exercitation</a> ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <ul>
+          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+          <li>Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+          <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            <ul>
+              <li>Excepteur sint occaecat.</li>
+              <li>Sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+            </ul>
+          </li>
+          <li>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+        </ul>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <h2 class="heading-two">Some Subtitle [h2]</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <a href="#\">quis nostrud exercitation</a> ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute i dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <ol>
+          <li>Lorem ipsum dolor sit amet</li>
+          <li>Consectetur adipisicing elit</li>
+          <li>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+            <ol>
+              <li>Lorem ipsum dolor</li>
+              <li>Ut enim ad minim veniam</li>
+              <li>Quis nostrud exercitation ullamco.</li>
+            </ol>
+          </li>
+          <li>Ut enim ad minim veniam</li>
+          <li>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+        </ol>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <ul>
+          <li> Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+          <li> Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+          <li> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            <ul>
+              <li> Excepteur sint occaecat.</li>
+              <li>Sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+            </ul>
+          </li>
+          <li>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id estlaborum.</li>
+        </ul>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. Ut enim ad minim veniam, <a href="#\">quis nostrud exercitation</a> ullamco laboris nisiut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillumdolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <h3 class="heading-three">Some Subtitle Heading 3 [h3]</h3>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id estlaborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. Ut enim ad minim veniam, <a href="#\">quis nostrud exercitation</a> ullamco laboris nisiut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillumdolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,sunt in culpa qui officiadeserunt mollit anim id est laborum.</p>
+        <h4 class="heading-four">Some Subtitle Heading 4 [h4]</h4>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id estlaborum.</p>
+        <h4 class="heading-four">Some Subtitle [h4.text--hug]</h4>
+        <p class="text--hug">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id estlaborum.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id estlaborum.</p>
+        <h5 class="heading-five">Some Subtitle [h5]</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. Ut enim ad minim veniam, <a href="#\">quis nostrud exercitation</a> ullamco laboris nisiut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillumdolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officiadeserunt mollit anim id est laborum.</p>
+        <h6 class="heading-six">Some Subtitle [h6]</h6>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id estlaborum.</p>
+        <hr />
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. Ut enim ad minim veniam, <a href="#\">quis nostrud exercitation</a> ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillumdolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officiadeserunt mollit anim id est laborum.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <code>[code] composerrequire drupal/coretest this out</code> Excepteur sint occaecat cupidatat non proident, sunt in culpa quiofficia deserunt mollit anim id est laborum.</p>
+        <pre>[pre] composer require drupal/coretest this out</pre>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id estlaborum.</p>
+        <blockquote>
+          <p>[blockquote] Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id estlaborum.</p>
+        </blockquote>
+        <table>
+          <thead>
+            <tr>
+              <th>test</th>
+              <th>title</th>
+              <th>some</th>
+              <th>words</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>elephant</td>
+              <td>hippo</td>
+              <td>rhino</td>
+              <td>jaramundi</td>
+            </tr>
+            <tr>
+              <td>ocelot Lorem ipsum dolor sit amet.</td>
+              <td>jaguar</td>
+              <td>tabby</td>
+              <td>calico , consectetur adipisicing elit, sed do eiusmod tempor incididunt</td>
+            </tr>
+            <tr>
+              <td>cats ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi</td>
+              <td>dogs</td>
+              <td>wolves</td>
+              <td>sheep</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>eat</td>
+              <td>don't eat</td>
+              <td>dance</td>
+              <td>don't dance</td>
+            </tr>
+          </tfoot>
+        </table>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecatcupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. Ut enim ad minim veniam, <a href="#\">quis nostrud exercitation</a> ullamco laboris nisiut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillumdolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officiadeserunt mollit anim id est laborum.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id estlaborum.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id estlaborum.</p>
+      </main>
+    </div>
+  </div>
+</body>
+
+</html>
