@@ -17,7 +17,7 @@ $input--border-focus-color: $brand-color;
 $input--border: 1px solid $input--border-color;
 $input--border-focus: 1px solid $input--border-focus-color;
 $input--box-shadow-start: rgba(255, 255, 255, .4); // sets the border focus colour for form elements
-$input--box-shadow-end: rgba(248, 172, 30, 0.5); // sets the border focus colour for form elements
+$input--box-shadow-end: rgba(248, 172, 30, .5); // sets the border focus colour for form elements
 $input--color: $text-color;
 $input--placeholder-color: inherit;
 $input--placeholder-opacity: .5;
@@ -44,15 +44,17 @@ textarea {
 	font-weight: normal;
 }
 
-input::placeholder,
-textarea::placeholder {
-	color: $input--placeholder-color;
-	opacity: $input--placeholder-opacity;
+input,
+textarea {
+	::placeholder {
+		opacity: $input--placeholder-opacity;
+		color: $input--placeholder-color;
+	}
 }
 
-[role=button],
+[role='button'],
 button {
-	cursor: pointer
+	cursor: pointer;
 }
 
 
@@ -74,15 +76,15 @@ input,
 	}
 }
 
-textarea
+textarea,
 .form-textarea {
 	border: $input--border;
 	border-radius: $input--border-radius;
 	padding: .5rem;
+	resize: vertical;
 	line-height: $input--line-height;
 	color: $input--color;
 	font-size: $form--font-size;
-	resize: vertical;
 
 	&:focus {
 		transition: border linear .2s, box-shadow linear .2s;
@@ -93,7 +95,5 @@ textarea
 }
 
 .appearance-none {
-	-webkit-appearance: none;
-	-moz-appearance: none;
 	appearance: none;
 }
