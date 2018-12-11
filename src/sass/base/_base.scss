@@ -19,3 +19,16 @@ html {
 *::after {
 	box-sizing: inherit;
 }
+
+// Image helpers
+img {
+	max-width: 100%;
+}
+
+svg {
+	fill: currentColor;
+}
+
+[tabindex="-1"]:focus {
+	outline: none !important
+}

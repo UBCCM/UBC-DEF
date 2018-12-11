@@ -1,0 +1,94 @@
+:root {
+  --menu--transition: transform 0.195s cubic-bezier(0.694, 0.0482, 0.335, 1);
+  --brand-color: #002347; }
+
+label,
+.form-label {
+  line-height: 1rem;
+  color: var(--brand-color);
+  font-size: 1rem;
+  font-weight: bold; }
+
+select {
+  color: #212121; }
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-weight: normal; }
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.5; }
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: inherit;
+  opacity: 0.5; }
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: inherit;
+  opacity: 0.5; }
+
+input::placeholder,
+textarea::placeholder {
+  color: inherit;
+  opacity: 0.5; }
+
+[role=button],
+button {
+  cursor: pointer; }
+
+input,
+.form-input {
+  margin-bottom: 0;
+  border: 1px solid var(--brand-color);
+  border-radius: 2px;
+  height: 2.25rem;
+  line-height: 2.25rem;
+  color: #212121;
+  font-size: 16px; }
+  input:focus,
+  .form-input:focus {
+    -webkit-transition: border linear .2s, -webkit-box-shadow linear .2s;
+    transition: border linear .2s, -webkit-box-shadow linear .2s;
+    -o-transition: border linear .2s, box-shadow linear .2s;
+    transition: border linear .2s, box-shadow linear .2s;
+    transition: border linear .2s, box-shadow linear .2s, -webkit-box-shadow linear .2s;
+    outline-style: none;
+    border: 1px solid var(--brand-color);
+    -webkit-box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 0 8px rgba(248, 172, 30, 0.5);
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 0 8px rgba(248, 172, 30, 0.5); }
+
+textarea
+.form-textarea {
+  border: 1px solid var(--brand-color);
+  border-radius: 2px;
+  padding: .5rem;
+  line-height: 2.25rem;
+  color: #212121;
+  font-size: 16px;
+  resize: vertical; }
+  textarea
+.form-textarea:focus {
+    -webkit-transition: border linear .2s, -webkit-box-shadow linear .2s;
+    transition: border linear .2s, -webkit-box-shadow linear .2s;
+    -o-transition: border linear .2s, box-shadow linear .2s;
+    transition: border linear .2s, box-shadow linear .2s;
+    transition: border linear .2s, box-shadow linear .2s, -webkit-box-shadow linear .2s;
+    outline-style: none;
+    border: 1px solid var(--brand-color);
+    -webkit-box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 0 8px rgba(248, 172, 30, 0.5);
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 0 8px rgba(248, 172, 30, 0.5); }
+
+.appearance-none {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
+/*# sourceMappingURL= base.forms.dev.css.map */

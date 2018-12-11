@@ -24,6 +24,23 @@ $code-font-stack: 'Courier New',
 'Monaco',
 monospace !default;
 
+// Type Variables
+$base-font-size: 16 !default; // as an integer. We convert the unit later. The default will result in 16px on desktop
+$base-line-height: 1.5 !default; // as an integer. Defines how high the line height is as a multiple of font size.
+$leading: $base-line-height * 1rem !default; // multiply the line height and add a unit. Defaults to rem.
+$default-typeface: sans-serif !default;
+$alternate-typeface: sans-serif !default;
+// TYPE SCALES:
+// 1.067 Minor Second
+// 1.125 Major Second
+// 1.200 Minor Third
+// 1.250 Major Third
+// 1.333 Perfect Fourth
+// 1.414 Augmented Fourth
+// 1.500 Perfect Fifth
+// 1.618 Golden Ratio
+$scale: 1.25 !default;
+
 // Preference is given to HSLA format
 // Online color converter: https://www.w3schools.com/colors/colors_converter.asp
 /// Copy text color
