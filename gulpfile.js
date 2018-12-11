@@ -7,7 +7,6 @@ var nano = require('gulp-cssnano');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var sasslint = require('gulp-sass-lint');
-var sassdoc = require('sassdoc');
 
 var paths = {
 	src: {
