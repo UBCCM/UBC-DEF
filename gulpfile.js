@@ -1,4 +1,4 @@
-const { series, parallel, src, dest } = require('gulp');
+const { watch, series, parallel, src, dest } = require('gulp');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 const nano = require('gulp-cssnano');
@@ -62,8 +62,11 @@ function css() {
 	.pipe(dest('dist/css/'))
 }
 
+watch('src/sass/**/*.s+(a|c)ss', series(css));
+// Or a composed task
+//watch('src/*.js', series(javascript));
 exports.lint = series(lint);
 exports.css = series(css);
 exports.minify = series(minify);
-exports.build = parallel(javascript, css);
-exports.default = series(javascript, lint);
+exports.build = series(javascript, css, minify, lint);
+exports.default = parallel(javascript, css);
