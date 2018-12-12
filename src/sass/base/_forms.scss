@@ -46,7 +46,7 @@ textarea {
 
 input,
 textarea {
-	::placeholder {
+	&::placeholder {
 		opacity: $input--placeholder-opacity;
 		color: $input--placeholder-color;
 	}

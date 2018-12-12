@@ -28,6 +28,12 @@ html {
 	font-size: ($base-font-size / 16) * 100%;
 }
 
+// Selection color
+::selection {
+  color: #fff; 
+  background: var(--brand-color);
+}
+
 // Copy & Lists
 p {
 	margin-top: $leading;

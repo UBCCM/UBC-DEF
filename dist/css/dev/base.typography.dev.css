@@ -1,0 +1,178 @@
+:root {
+  --menu--transition: transform 0.195s cubic-bezier(0.694, 0.0482, 0.335, 1);
+  --brand-color: #002347; }
+
+html {
+  font-family: sans-serif;
+  font-size: 100%; }
+
+::-moz-selection {
+  color: #fff;
+  background: var(--brand-color); }
+
+::selection {
+  color: #fff;
+  background: var(--brand-color); }
+
+p {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  line-height: 1.5rem; }
+
+ul,
+ol {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem; }
+  ul li,
+  ol li {
+    line-height: 1.5rem; }
+  ul ul,
+  ul ol,
+  ol ul,
+  ol ol {
+    margin-top: 0;
+    margin-bottom: 0; }
+
+blockquote {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5rem; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading-one,
+.heading-two,
+.heading-three,
+.heading-four,
+.heading-five,
+.heading-six {
+  margin-bottom: 0;
+  font-family: sans-serif; }
+
+h1,
+.heading-one {
+  margin-top: 3rem;
+  line-height: 7.5rem;
+  font-size: 6rem; }
+
+h2,
+.heading-two {
+  margin-top: 3rem;
+  line-height: 6rem;
+  font-size: 4.8rem; }
+
+h3,
+.heading-three {
+  margin-top: 3rem;
+  line-height: 4.5rem;
+  font-size: 3.6rem; }
+
+h4,
+.heading-four {
+  margin-top: 3rem;
+  line-height: 3rem;
+  font-size: 2.4rem; }
+
+h5,
+.heading-five {
+  margin-top: 1.5rem;
+  line-height: 1.5rem;
+  font-size: 1.2rem; }
+
+h6,
+.heading-six {
+  margin-top: 1.5rem;
+  line-height: 1.5rem;
+  font-size: 0.8rem; }
+
+table {
+  margin-top: 1.5rem;
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td,
+th {
+  padding: 0;
+  line-height: 24px; }
+
+code,
+.text--code {
+  vertical-align: bottom; }
+
+.text--lead {
+  margin-top: 1.875rem;
+  margin-bottom: 0;
+  line-height: 2.25rem;
+  font-size: 1.5rem; }
+
+.text--small {
+  font-size: 0.9rem; }
+
+.text--leading-none {
+  line-height: 1; }
+
+.text--leading-tight {
+  line-height: 1.25; }
+
+.text--leading-normal {
+  line-height: 1.5; }
+
+.text--leading-loose {
+  line-height: 2; }
+
+.text--center {
+  text-align: center; }
+
+.text--right {
+  text-align: right; }
+
+.text--left {
+  text-align: left; }
+
+.text--uppercase {
+  text-transform: uppercase; }
+
+.text--lowercase {
+  text-transform: lowercase; }
+
+.text--normalcase {
+  text-transform: none; }
+
+.text--capitalize {
+  text-transform: capitalize; }
+
+.text--hug {
+  margin-top: 0; }
+
+.text--tracking-tight {
+  letter-spacing: -.05em; }
+
+.text--tracking-normal {
+  letter-spacing: 0; }
+
+.text--tracking-wide {
+  letter-spacing: .05em; }
+
+.text--truncate {
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap; }
+
+.text--whitespace-normal {
+  white-space: normal; }
+
+.text--whitespace-pre {
+  white-space: pre; }
+
+.text--break-words {
+  word-wrap: break-word; }
+
+.text--break-normal {
+  word-wrap: normal; }
+
+/*# sourceMappingURL=base.typography.dev.css.map */

@@ -22,25 +22,25 @@ textarea {
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: inherit;
-  opacity: 0.5; }
-
-input::-moz-placeholder,
-textarea::-moz-placeholder {
-  color: inherit;
-  opacity: 0.5; }
+  opacity: 0.5;
+  color: inherit; }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: inherit;
-  opacity: 0.5; }
+  opacity: 0.5;
+  color: inherit; }
+
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+  opacity: 0.5;
+  color: inherit; }
 
 input::placeholder,
 textarea::placeholder {
-  color: inherit;
-  opacity: 0.5; }
+  opacity: 0.5;
+  color: inherit; }
 
-[role=button],
+[role='button'],
 button {
   cursor: pointer; }
 
@@ -65,17 +65,17 @@ input,
     -webkit-box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 0 8px rgba(248, 172, 30, 0.5);
             box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 0 8px rgba(248, 172, 30, 0.5); }
 
-textarea
+textarea,
 .form-textarea {
   border: 1px solid var(--brand-color);
   border-radius: 2px;
   padding: .5rem;
+  resize: vertical;
   line-height: 2.25rem;
   color: #212121;
-  font-size: 16px;
-  resize: vertical; }
-  textarea
-.form-textarea:focus {
+  font-size: 16px; }
+  textarea:focus,
+  .form-textarea:focus {
     -webkit-transition: border linear .2s, -webkit-box-shadow linear .2s;
     transition: border linear .2s, -webkit-box-shadow linear .2s;
     -o-transition: border linear .2s, box-shadow linear .2s;
@@ -88,7 +88,7 @@ textarea
 
 .appearance-none {
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none; }
+     -moz-appearance: none;
+          appearance: none; }
 
-/*# sourceMappingURL= base.forms.dev.css.map */
+/*# sourceMappingURL=base.forms.dev.css.map */

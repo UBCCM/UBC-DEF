@@ -118,7 +118,8 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
   /* 2 */ }
 
 /**
@@ -425,12 +426,20 @@ img {
 svg {
   fill: currentColor; }
 
-[tabindex="-1"]:focus {
+[tabindex='-1'] :focus {
   outline: none !important; }
 
 html {
   font-family: sans-serif;
   font-size: 100%; }
+
+::-moz-selection {
+  color: #fff;
+  background: var(--brand-color); }
+
+::selection {
+  color: #fff;
+  background: var(--brand-color); }
 
 p {
   margin-top: 1.5rem;
