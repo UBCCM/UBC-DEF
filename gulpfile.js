@@ -63,7 +63,6 @@ function css() {
 }
 
 watch('src/sass/**/*.s+(a|c)ss', series(css));
-// Or a composed task
 //watch('src/*.js', series(javascript));
 exports.lint = series(lint);
 exports.css = series(css);

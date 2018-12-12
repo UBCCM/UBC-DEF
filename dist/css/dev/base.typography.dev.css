@@ -3,8 +3,7 @@
   --brand-color: #002347; }
 
 html {
-  font-family: sans-serif;
-  font-size: 100%; }
+  font-family: sans-serif; }
 
 ::-moz-selection {
   color: #fff;
@@ -110,7 +109,7 @@ code,
   font-size: 1.5rem; }
 
 .text--small {
-  font-size: 0.9rem; }
+  font-size: 0.875rem; }
 
 .text--leading-none {
   line-height: 1; }
