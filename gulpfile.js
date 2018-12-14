@@ -45,6 +45,7 @@ function javascript(cb) {
   // body omitted
   cb();
 }
+
 function css() {
 	return src('src/sass/**/*.s+(a|c)ss')
 	.pipe(sourcemaps.init())
@@ -62,8 +63,12 @@ function css() {
 	.pipe(dest('dist/css/'))
 }
 
-watch('src/sass/**/*.s+(a|c)ss', series(css));
-//watch('src/*.js', series(javascript));
+function watcher() {
+	watch('src/sass/**/*.s+(a|c)ss', series(css));
+	watch('src/*.js', series(javascript));
+}
+
+exports.watcher = parallel(watcher);
 exports.lint = series(lint);
 exports.css = series(css);
 exports.minify = series(minify);
