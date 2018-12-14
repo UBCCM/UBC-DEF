@@ -19,6 +19,7 @@ $alternate-typeface: sans-serif;
 // 1.500 Perfect Fifth
 // 1.618 Golden Ratio
 $scale: 1.2;
+$selected-text-color: #fff;
 
 //
 // Default
@@ -30,8 +31,8 @@ html {
 
 // Selection color
 ::selection {
-  color: #fff;
-  background: var(--brand-color);
+	background: var(--brand-color);
+	color: $selected-text-color;
 }
 
 // Copy & Lists

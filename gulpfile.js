@@ -56,7 +56,7 @@ function css() {
 	}))
 	//.pipe(rename('ubcclf.css'))
 	.pipe(autoprefixer({
-		browsers: ['last 6 versions']
+		browsers: ['last 4 versions']
 	}))
 	.pipe(sourcemaps.write('./'))
 	.pipe(dest('dist/css/'))
