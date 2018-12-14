@@ -1,0 +1,157 @@
+// Tailwind's base styles
+//See: https://github.com/tailwindcss/tailwindcss/issues/53#issuecomment-341413622 */
+@tailwind preflight;
+
+// 1. Configuration and helpers
+@import
+'abstracts/variables',
+'abstracts/functions',
+'abstracts/mixins';
+
+// 2. Vendors
+// @import
+// 'vendor/normalize';
+
+// 3. Base stuff
+@import
+// 'base/base',
+'base/fonts',
+'base/typography';
+// 'base/helpers';
+
+// 4. Layout-related sections
+@import
+'layout/header',
+'layout/footer';
+
+// 5. Components
+@import
+'components/button',
+'components/button.hamburger',
+'components/navigation.drawer';
+
+// 6. Page-specific styles
+@import
+'pages/home';
+
+// 7. Themes
+@import
+'themes/default';
+
+// Injects all of Tailwind's utility classes
+//See: https://github.com/tailwindcss/tailwindcss/issues/53#issuecomment-341413622 */
+@tailwind utilities;
+
+// TRANSFORMATION UTILITIES
+.rotate-90 {
+	transform: rotate(90deg);
+}
+
+.rotate-180 {
+	transform: rotate(180deg);
+}
+
+.rotate-270 {
+	transform: rotate(270deg);
+}
+
+// Add tailwind responsive directive to generate repsonsive utility classes
+@responsive {
+
+	// FLEXBOX ORDER
+	.flex-order-1 {
+		order: 1;
+	}
+
+	.flex-order-2 {
+		order: 2;
+	}
+
+	.flex-order-3 {
+		order: 3;
+	}
+
+	.flex-order-4 {
+		order: 4;
+	}
+
+	.flex-order-5 {
+		order: 5;
+	}
+
+	.flex-order-6 {
+		order: 6;
+	}
+
+	// WIDTHS
+	.w-half {
+		width: 50%;
+	}
+
+	.w-one-third {
+		width: 33.33333%;
+	}
+
+	.w-two-thirds {
+		width: 66.66667%;
+	}
+
+	.w-one-quarter {
+		width: 25%;
+	}
+
+	.w-three-quarters {
+		width: 75%;
+	}
+
+	.w-one-fifth {
+		width: 20%;
+	}
+
+	.w-two-fifths {
+		width: 40%;
+	}
+
+	.w-three-fifths {
+		width: 60%;
+	}
+
+	.w-four-fifths {
+		width: 80%;
+	}
+}
+
+// HACKS and WORKAROUNDS
+.pr-0 {
+	padding-right: 0 !important;
+}
+
+@media (min-width: $breakpoint--md) {
+	.md--pr-4 {
+		padding-right: 1rem !important;
+	}
+}
+
+@media (max-width: $breakpoint--sm--max) {
+	.views-exposed-form .views-exposed-widget .form-submit {
+		margin-top: 0;
+		margin-bottom: 2rem;
+	}
+}
+
+/// Misc styles for correcting errant layout behaviours
+.float-left	{
+	float: left;
+}
+
+.ml-7 {
+	margin-left: 1.75rem;
+}
+
+.-ml-2 {
+	margin-left: -.5rem;
+}
+
+.-mr-2 {
+	margin-right: -.5rem;
+}

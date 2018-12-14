@@ -11,37 +11,18 @@ const tailwindcss = require('tailwindcss');
 
 function lint() {
 	return src('src/sass/**/*.s+(a|c)ss')
-		.pipe(sasslint({
-			options: {
-				formatter: 'stylish',
-				'merge-default-rules': true,
-			},
-			files: {
-				ignore: 'src/sass/vendor/*.s+(a|c)ss'
-			},
-			configFile: 'config/.sass-lint.yml'
-		}))
-		.pipe(sasslint.format())
-		.pipe(sasslint.failOnError())
-}
-
-function minify() {
-	return src('src/sass/**/*.s+(a|c)ss')
-	.pipe(sass().on('error', sass.logError))
-	.pipe(autoprefixer({
-		browsers: ['last 4 versions']
-	}))
-	.pipe(nano({
-		discardComments: {
-			removeAll: true
+	.pipe(sasslint({
+		options: {
+			formatter: 'stylish',
+			'merge-default-rules': true,
 		},
-		zindex: false
+		files: {
+			ignore: 'src/sass/vendor/*.s+(a|c)ss'
+		},
+		configFile: 'config/.sass-lint.yml'
 	}))
-	.pipe(rename({
-		suffix: ".min",
-		extname: ".css"
-	}))
-	.pipe(dest('dist/css/'))
+	.pipe(sasslint.format())
+	.pipe(sasslint.failOnError())
 }
 
 function javascript(cb) {
@@ -66,6 +47,40 @@ function css() {
 	.pipe(dest('dist/css/'))
 }
 
+function tailwind() {
+	return src('src/sass/**/*.s+(a|c)ss')
+	.pipe(sourcemaps.init())
+	.pipe(sass().on('error', sass.logError))
+	.pipe(postcss([
+		tailwindcss('config/tailwind-config.js'),
+		require('autoprefixer'),
+	]))
+	.pipe(rename({
+		extname: ".css"
+	}))
+	.pipe(sourcemaps.write('./'))
+	.pipe(dest('dist/css/'))
+}
+
+function minify() {
+	return src('dist/css/**/*.css')
+	.pipe(sass().on('error', sass.logError))
+	.pipe(autoprefixer({
+		browsers: ['last 4 versions']
+	}))
+	.pipe(nano({
+		discardComments: {
+			removeAll: true
+		},
+		zindex: false
+	}))
+	.pipe(rename({
+		suffix: ".min",
+		extname: ".css"
+	}))
+	.pipe(dest('dist/min/css/'))
+}
+
 function images() {
 	return src('src/img/**/*')
 	.pipe(imagemin([
@@ -79,23 +94,6 @@ function images() {
 	.pipe(dest('dist/img/'))
 }
 
-function tailwindtest(done) {
-	return src('src/sass/**/*.s+(a|c)ss')
-	.pipe(sourcemaps.init())
-	.pipe(sass().on('error', sass.logError))
-	.pipe(postcss([
-		tailwindcss('config/tailwind-config.js'),
-		require('autoprefixer'),
-	]))
-	.pipe(rename({
-		extname: ".css",
-		suffix: ".min"
-	}))
-	.pipe(sourcemaps.write('./'))
-	.pipe(dest('dist/css/'))
-	done();
-}
-
 function watcher() {
 	watch('src/sass/**/*.s+(a|c)ss', series(css));
 	watch('src/*.js', series(javascript));
@@ -103,9 +101,9 @@ function watcher() {
 
 exports.watcher = parallel(watcher);
 exports.lint = series(lint);
-exports.tailwind = series(tailwindtest);
+exports.tailwind = series(tailwind);
 exports.css = series(css);
 exports.images = parallel(images);
 exports.minify = series(minify);
-exports.build = series(javascript, images, css, tailwindtest, minify, lint);
+exports.build = series(javascript, images, css, tailwind, minify, lint);
 exports.default = parallel(javascript, css, images);

@@ -74,7 +74,7 @@ var colors = {
   'grey-lightest': '#fafcfc',
   'white': '#ffffff',
 
-  'red-darkest': '#420806',
+  /* 'red-darkest': '#420806',
   'red-darker': '#6a1b19',
   'red-dark': '#cc1f1a',
   'red': '#e3342f',
@@ -144,7 +144,7 @@ var colors = {
   'pink': '#f66d9b',
   'pink-light': '#fa7ea8',
   'pink-lighter': '#ffbbca',
-  'pink-lightest': '#ffebef',
+  'pink-lightest': '#ffebef', */
 }
 
 module.exports = {

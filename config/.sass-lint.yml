@@ -42,9 +42,9 @@ rules:
   no-warn: 1
 
   # Nesting
-  force-attribute-nesting: 1
-  force-element-nesting: 1
-  force-pseudo-nesting: 1
+  force-attribute-nesting: 0
+  force-element-nesting: 0
+  force-pseudo-nesting: 0
   bem-depth:
     - 2
     -

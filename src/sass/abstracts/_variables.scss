@@ -72,6 +72,16 @@ $max-width: 1180px !default;
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 $breakpoints: ( 'small': 320px, 'medium': 768px, 'large': 1024px, ) !default;
 
+/// Breakpoints map
+$breakpoint--sm: 576px;
+$breakpoint--md: 768px;
+$breakpoint--lg: 992px;
+$breakpoint--xl: 1200px;
+
+$breakpoint--sm--max: $breakpoint--md - 1px;
+$breakpoint--md--max: $breakpoint--lg - 1px;
+$breakpoint--lg--max: $breakpoint--xl - 1px;
+
 /// Relative or absolute URL where all assets are served from
 /// @type String
 /// @example scss - When using a CDN
