@@ -6,6 +6,8 @@ const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const sasslint = require('gulp-sass-lint');
 const imagemin = require('gulp-imagemin');
+const postcss = require('gulp-postcss');
+const tailwindcss = require('tailwindcss');
 
 function lint() {
 	return src('src/sass/**/*.s+(a|c)ss')
@@ -78,8 +80,6 @@ function images() {
 }
 
 function tailwindtest(done) {
-	var postcss = require('gulp-postcss');
-	var tailwindcss = require('tailwindcss');
 	return src('src/sass/**/*.s+(a|c)ss')
 	.pipe(sourcemaps.init())
 	.pipe(sass().on('error', sass.logError))
@@ -107,5 +107,5 @@ exports.tailwind = series(tailwindtest);
 exports.css = series(css);
 exports.images = parallel(images);
 exports.minify = series(minify);
-exports.build = series(javascript, images, css, minify, lint);
+exports.build = series(javascript, images, css, tailwindtest, minify, lint);
 exports.default = parallel(javascript, css, images);
