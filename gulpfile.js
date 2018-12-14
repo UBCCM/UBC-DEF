@@ -5,6 +5,7 @@ const nano = require('gulp-cssnano');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const sasslint = require('gulp-sass-lint');
+const imagemin = require('gulp-imagemin');
 
 function lint() {
 	return src('src/sass/**/*.s+(a|c)ss')
@@ -63,6 +64,38 @@ function css() {
 	.pipe(dest('dist/css/'))
 }
 
+function images() {
+	return src('src/img/**/*')
+	.pipe(imagemin([
+		imagemin.gifsicle({interlaced: true}),
+		imagemin.jpegtran({progressive: true}),
+		imagemin.optipng({optimizationLevel: 5}),
+		imagemin.svgo({plugins: [{removeViewBox: false}]})
+		], {
+		verbose: true
+	}))
+	.pipe(dest('dist/img/'))
+}
+
+function tailwindtest(done) {
+	var postcss = require('gulp-postcss');
+	var tailwindcss = require('tailwindcss');
+	return src('src/sass/**/*.s+(a|c)ss')
+	.pipe(sourcemaps.init())
+	.pipe(sass().on('error', sass.logError))
+	.pipe(postcss([
+		tailwindcss('config/tailwind-config.js'),
+		require('autoprefixer'),
+	]))
+	.pipe(rename({
+		extname: ".css",
+		suffix: ".min"
+	}))
+	.pipe(sourcemaps.write('./'))
+	.pipe(dest('dist/css/'))
+	done();
+}
+
 function watcher() {
 	watch('src/sass/**/*.s+(a|c)ss', series(css));
 	watch('src/*.js', series(javascript));
@@ -70,7 +103,9 @@ function watcher() {
 
 exports.watcher = parallel(watcher);
 exports.lint = series(lint);
+exports.tailwind = series(tailwindtest);
 exports.css = series(css);
+exports.images = parallel(images);
 exports.minify = series(minify);
-exports.build = series(javascript, css, minify, lint);
-exports.default = parallel(javascript, css);
+exports.build = series(javascript, images, css, minify, lint);
+exports.default = parallel(javascript, css, images);
