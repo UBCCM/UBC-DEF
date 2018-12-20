@@ -10,14 +10,14 @@ const postcss = require('gulp-postcss');
 const tailwindcss = require('tailwindcss');
 
 function lint() {
-	return src('src/sass/**/*.s+(a|c)ss')
+	return src('src/scss/**/*.s+(a|c)ss')
 	.pipe(sasslint({
 		options: {
 			formatter: 'stylish',
 			'merge-default-rules': true,
 		},
 		files: {
-			ignore: 'src/sass/vendor/*.s+(a|c)ss'
+			ignore: 'src/scss/vendor/*.s+(a|c)ss'
 		},
 		configFile: 'config/.sass-lint.yml'
 	}))
@@ -31,7 +31,7 @@ function javascript(cb) {
 }
 
 function css() {
-	return src('src/sass/**/*.s+(a|c)ss')
+	return src('src/scss/**/*.s+(a|c)ss')
 	.pipe(sourcemaps.init())
 	.pipe(sass().on('error', sass.logError))
 	.pipe(rename({
@@ -48,7 +48,7 @@ function css() {
 }
 
 function tailwind() {
-	return src('src/sass/**/*.s+(a|c)ss')
+	return src('src/scss/**/*.s+(a|c)ss')
 	.pipe(sourcemaps.init())
 	.pipe(sass().on('error', sass.logError))
 	.pipe(postcss([
@@ -96,7 +96,7 @@ function images() {
 }
 
 function watcher() {
-	watch('src/sass/**/*.s+(a|c)ss', series(css));
+	watch('src/scss/**/*.s+(a|c)ss', series(css));
 	watch('src/*.js', series(javascript));
 }
 
