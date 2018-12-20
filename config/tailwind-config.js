@@ -188,7 +188,8 @@ module.exports = {
     'sm': '576px',
     'md': '768px',
     'lg': '992px',
-    'xl': '1200px',
+	'xl': '1200px',
+	'xxl': '1400px',
   },
 
 
@@ -871,8 +872,8 @@ module.exports = {
     display: ['responsive'],
     flexbox: ['responsive'],
     float: ['responsive'],
-    fonts: ['responsive'],
-    fontWeights: ['responsive', 'hover'],
+// fonts: ['responsive'],
+    fontWeights: ['responsive'],
     height: ['responsive'],
     leading: ['responsive'],
     lists: ['responsive'],

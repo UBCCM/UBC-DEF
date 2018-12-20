@@ -34,11 +34,6 @@ function css() {
 	return src('src/scss/**/*.s+(a|c)ss')
 	.pipe(sourcemaps.init())
 	.pipe(sass().on('error', sass.logError))
-	.pipe(rename({
-		dirname: "dev",
-		suffix: ".dev",
-		extname: ".css"
-	}))
 	//.pipe(rename('ubcclf.css'))
 	.pipe(autoprefixer({
 		browsers: ['last 4 versions']

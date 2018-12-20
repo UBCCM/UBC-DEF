@@ -19,7 +19,12 @@ $alternate-typeface: sans-serif;
 // 1.500 Perfect Fifth
 // 1.618 Golden Ratio
 $scale: 1.2;
+// The color of text when it is manually selected on page.
 $selected-text-color: #fff;
+// Allows setting a maximum line length for optimized legibility. We use em units so that this is relative to the current text size.
+$textline-width: 30em;
+$textline-width--lg: 34em;
+$textline-width--sm: 20em;
 
 //
 // Default
@@ -187,6 +192,10 @@ code,
 	text-align: left;
 }
 
+.text--justify {
+	text-align: justify;
+}
+
 // Case
 .text--uppercase {
 	text-transform: uppercase;
@@ -245,4 +254,16 @@ code,
 
 .text--break-normal {
 	word-wrap: normal;
+}
+
+.text--measure {
+	max-width: $textline-width;
+}
+
+.text--measure--sm {
+	max-width: $textline-width--sm;
+}
+
+.text--measure--lg {
+	max-width: $textline-width--lg;
 }
