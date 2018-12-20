@@ -44,7 +44,7 @@ function css() {
 		browsers: ['last 4 versions']
 	}))
 	.pipe(sourcemaps.write('./'))
-	.pipe(dest('dist/css/'))
+	.pipe(dest('build/css/'))
 }
 
 function tailwind() {
@@ -59,11 +59,11 @@ function tailwind() {
 		extname: ".css"
 	}))
 	.pipe(sourcemaps.write('./'))
-	.pipe(dest('dist/css/'))
+	.pipe(dest('build/css/'))
 }
 
 function minify() {
-	return src('dist/css/**/*.css')
+	return src('build/css/**/*.css')
 	.pipe(sass().on('error', sass.logError))
 	.pipe(autoprefixer({
 		browsers: ['last 4 versions']
@@ -78,7 +78,7 @@ function minify() {
 		suffix: ".min",
 		extname: ".css"
 	}))
-	.pipe(dest('dist/min/css/'))
+	.pipe(dest('dist/css/'))
 }
 
 function images() {
@@ -91,6 +91,7 @@ function images() {
 		], {
 		verbose: true
 	}))
+	.pipe(dest('build/img/'))
 	.pipe(dest('dist/img/'))
 }
 
