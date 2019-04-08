@@ -44,6 +44,7 @@ $input--placeholder-opacity: .5;
 	height: 2.625rem;
 	padding-right: 3rem;
 	padding-left: .5rem;
+	cursor: pointer;
 	transition: color $transition-speed ease, background-color $transition-speed ease;
 	border: 1px solid $input--border-color;
 	border-radius: $input--border-radius;
@@ -53,7 +54,6 @@ $input--placeholder-opacity: .5;
 	background-size: 42px 42px;
 	line-height: 1;
 	-webkit-appearance: initial;
-	cursor: pointer;
 }
 
 
@@ -106,8 +106,8 @@ $input--placeholder-opacity: .5;
 	position: relative;
 	margin-bottom: 0;
 	padding-left: 2rem;
-	line-height: 1.25rem;
 	cursor: pointer;
+	line-height: 1.25rem;
 }
 
 .#{$namespace}checkbox label::after,
@@ -186,12 +186,13 @@ $input--placeholder-opacity: .5;
 }
 
 .#{$namespace}submit-button {
-	border-color: $brand-color;
-	padding: .5rem 1rem;
-	line-height: 1;
 	margin-bottom: 1.5rem;
-	transition: color $transition-speed ease, background-color $transition-speed ease;
+	padding: .5rem 1rem;
 	cursor: pointer;
+	transition: color $transition-speed ease, background-color $transition-speed ease;
+	border-color: $brand-color;
+	line-height: 1;
+
 	&:hover {
 		background-color: $grey-light;
 	}
