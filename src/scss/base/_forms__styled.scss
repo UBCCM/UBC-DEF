@@ -1,0 +1,198 @@
+// -----------------------------------------------------------------------------
+// This file contains default form styles.
+// -----------------------------------------------------------------------------
+
+/// Local variables
+// sets the font size of form elements
+$form--font-size: $base-font-size * 1px;
+$form-label--color: $brand-color;
+$form-label--line-height: 1rem;
+$form-label--font-size: $form-label--line-height;
+$form-required-color: #f00;
+$grey-dark: #70818a;
+$grey-light: #dae4e9;
+$transition-speed: .125s;
+
+$input--height: $base-line-height * 1.5rem;
+$input--line-height: $base-line-height * 1.5rem;
+$input--width: $text-color;
+// sets the border radius for form elements
+$input--border-radius: 2px;
+// sets the border colour for form elements
+$input--border-color: $brand-color;
+$input--border-focus-color: $brand-color;
+$input--border: 1px solid $input--border-color;
+$input--border-focus: 1px solid $input--border-focus-color;
+// sets the border focus colour for form elements
+$input--box-shadow-start: rgba(255, 255, 255, .4);
+// sets the border focus colour for form elements
+$input--box-shadow-end: rgba(0, 35, 71, .5);
+$input--color: $text-color;
+$input--placeholder-color: inherit;
+$input--placeholder-opacity: .5;
+
+.#{$namespace}styled-select {
+	display: inline-block;
+	overflow: hidden;
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 1.5rem;
+}
+
+.#{$namespace}styled-select select {
+	width: 100%;
+	height: 2.625rem;
+	padding-right: 3rem;
+	padding-left: .5rem;
+	transition: color $transition-speed ease, background-color $transition-speed ease;
+	border: 1px solid $input--border-color;
+	border-radius: $input--border-radius;
+	background-repeat: no-repeat;
+	background-position-x: right;
+	background-position-y: center;
+	background-size: 42px 42px;
+	line-height: 1;
+	-webkit-appearance: initial;
+	cursor: pointer;
+}
+
+
+.#{$namespace}styled-text-input label,
+.#{$namespace}styled-textarea label {
+	display: block;
+}
+
+.#{$namespace}styled-radios,
+.#{$namespace}styled-checkboxes {
+	margin-top: 1.5rem;
+}
+
+.#{$namespace}form--inline {
+	display: flex;
+}
+
+.#{$namespace}form--inline .#{$namespace}styled-radios,
+.#{$namespace}form--inline .#{$namespace}styled-checkboxes {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 0;
+
+	.#{$namespace}checkbox,
+	.#{$namespace}radio {
+		padding-right: 1.25rem;
+	}
+}
+
+.#{$namespace}checkbox,
+.#{$namespace}radio {
+	position: relative;
+}
+
+// RADIO AND CHECKBOX STYLES - expects input before label
+// hide the input
+.#{$namespace}checkbox input,
+.#{$namespace}radio input {
+	position: absolute;
+	left: 0;
+	width: 0;
+	height: 0;
+	margin: 0;
+	opacity: 0;
+}
+
+.#{$namespace}checkbox label,
+.#{$namespace}radio label {
+	display: inline-block;
+	position: relative;
+	margin-bottom: 0;
+	padding-left: 2rem;
+	line-height: 1.25rem;
+	cursor: pointer;
+}
+
+.#{$namespace}checkbox label::after,
+.#{$namespace}radio label::after,
+.#{$namespace}checkbox label::before,
+.#{$namespace}radio label::before {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1.25rem;
+	height: 1.25rem;
+	content: '';
+}
+
+.#{$namespace}checkbox label::before,
+.#{$namespace}radio label::before {
+	border: solid 2px $grey-dark;
+}
+
+.#{$namespace}radio label::before {
+	border-radius: 3.125rem;
+}
+
+.#{$namespace}checkbox input:disabled + label,
+.#{$namespace}radio input:disabled + label {
+	cursor: not-allowed;
+}
+
+.#{$namespace}checkbox input:disabled + label::before,
+.#{$namespace}radio input:disabled + label::before {
+	background-color: $grey-light;
+}
+
+.#{$namespace}checkbox input + label::after,
+.#{$namespace}radio input + label::after {
+	content: none;
+}
+
+.#{$namespace}checkbox input:checked + label::after,
+.#{$namespace}radio input:checked + label::after {
+	content: '';
+}
+
+.#{$namespace}radio input:checked + label::after {
+	top: 0;
+	left: 0;
+	width: 1.25rem;
+	height: 1.25rem;
+	border: 3px solid $grey-light;
+	border-radius: 3.125rem;
+	background-color: $brand-color;
+}
+
+.#{$namespace}checkbox input:checked + label::after {
+	top: 5px;
+	left: 5px;
+	width: .714rem;
+	height: .429rem;
+	transform: rotate(-45deg);
+	border-color: $brand-color;
+	border-bottom: 3px solid;
+	border-left: 3px solid;
+}
+
+.#{$namespace}radio input:checked:disabled + label::after {
+	background-color: $grey-light;
+}
+
+.#{$namespace}checkbox input:checked:disabled + label::after {
+	border-color: $grey-light;
+}
+
+.#{$namespace}form-required {
+	color: $form-required-color;
+}
+
+.#{$namespace}submit-button {
+	border-color: $brand-color;
+	padding: .5rem 1rem;
+	line-height: 1;
+	margin-bottom: 1.5rem;
+	transition: color $transition-speed ease, background-color $transition-speed ease;
+	cursor: pointer;
+	&:hover {
+		background-color: $grey-light;
+	}
+}

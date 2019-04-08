@@ -1,0 +1,43 @@
+:root {
+  --menu--transition: transform .195s cubic-bezier(.694, .0482, .335, 1);
+  --brand-color: #002347;
+}
+
+.visually-hidden,
+.skip-link a {
+  position: absolute;
+  top: auto;
+  left: -300%;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+}
+
+.skip-link a:focus {
+  position: static;
+  width: auto;
+  height: auto;
+}
+
+.appearance-none {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.rotate-90 {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.rotate-180 {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.rotate-270 {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+/*# sourceMappingURL=base.helpers.css.map */

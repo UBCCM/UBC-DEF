@@ -27,11 +27,14 @@
 		"gulp-postcss": "^8.0.0",
 		"gulp-rename": "^1.4.0",
 		"gulp-sass": "^4.0.2",
-		"gulp-sourcemaps": "^2.6.4",
-		"tailwindcss": "^0.7.3"
+		"gulp-sourcemaps": "^2.6.5",
+		"tailwind-order-plugin": "^1.0.1"
 	},
 	"devDependencies": {
 		"gulp-autoprefixer": "^6.0.0",
-		"gulp-sass-lint": "^1.4.0"
+		"gulp-connect": "^5.7.0",
+		"gulp-purgecss": "^1.1.1",
+		"gulp-sass-lint": "^1.4.0",
+		"tailwindcss": "^1.0.0-beta.3"
 	}
 }

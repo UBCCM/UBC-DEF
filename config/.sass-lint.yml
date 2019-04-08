@@ -83,11 +83,16 @@ rules:
     - 2
     -
       order:
+          # various preceeding rules
+        - '@charset'
+        - '@import'
+        - '@namespace'
+        - '@extend'
+        - '@variable'
+        - '@include'
+
         # all
         - 'all'
-
-        # box-sizing
-        - 'box-sizing'
 
         # position
         - 'display'
@@ -100,6 +105,17 @@ rules:
         #floats
         - 'float'
         - 'clear'
+
+        # visibility
+        - 'visibility'
+        - 'z-index'
+
+        # overflow
+        - 'overflow'
+        - 'overflow-x'
+        - 'overflow-y'
+        - 'clip'
+        - 'zoom'
 
         # flex
         - 'flex'
@@ -130,6 +146,12 @@ rules:
         - 'grid-row-gap'
         - 'grid-column-gap'
 
+        #shorthand for align-content and justify-content
+        - 'place-content'
+
+        #shorthand for align-items and justify-items
+        - 'place-items'
+
         # align-content
         - 'align-content'
         - 'align-items'
@@ -140,8 +162,41 @@ rules:
         - 'justify-items'
         - 'justify-self'
 
-        # order
+        # order for flexbox or grid
         - 'order'
+
+        # box-sizing
+        - 'box-sizing'
+
+        # width
+        - 'width'
+        - 'min-width'
+        - 'max-width'
+
+        # height
+        - 'height'
+        - 'min-height'
+        - 'max-height'
+
+        # margin
+        - 'margin'
+        - 'margin-top'
+        - 'margin-right'
+        - 'margin-bottom'
+        - 'margin-left'
+
+        # padding
+        - 'padding'
+        - 'padding-top'
+        - 'padding-right'
+        - 'padding-bottom'
+        - 'padding-left'
+
+        # tables
+        - 'table-layout'
+        - 'border-collapse'
+        - 'border-spacing'
+        - 'empty-cells'
 
         # columns
         - 'columns'
@@ -155,187 +210,12 @@ rules:
         - 'column-count'
         - 'column-width'
 
-        # transform
-        - 'backface-visibility'
-        - 'perspective'
-        - 'perspective-origin'
-        - 'transform'
-        - 'transform-origin'
-        - 'transform-style'
-
-        # transition
-        - 'transition'
-        - 'transition-delay'
-        - 'transition-duration'
-        - 'transition-property'
-        - 'transition-timing-function'
-
-        # visibility
-        - 'visibility'
-        - 'opacity'
-        - 'z-index'
-
-        # margin
-        - 'margin'
-        - 'margin-top'
-        - 'margin-right'
-        - 'margin-bottom'
-        - 'margin-left'
-
-        # outline
-        - 'outline'
-        - 'outline-offset'
-        - 'outline-width'
-        - 'outline-style'
-        - 'outline-color'
-
-        # border
-        - 'border'
-        - 'border-top'
-        - 'border-right'
-        - 'border-bottom'
-        - 'border-left'
-        - 'border-width'
-        - 'border-top-width'
-        - 'border-right-width'
-        - 'border-bottom-width'
-        - 'border-left-width'
-
-        # border-style
-        - 'border-style'
-        - 'border-top-style'
-        - 'border-right-style'
-        - 'border-bottom-style'
-        - 'border-left-style'
-
-        # border-radius
-        - 'border-radius'
-        - 'border-top-left-radius'
-        - 'border-top-right-radius'
-        - 'border-bottom-left-radius'
-        - 'border-bottom-right-radius'
-
-        # border-color
-        - 'border-color'
-        - 'border-top-color'
-        - 'border-right-color'
-        - 'border-bottom-color'
-        - 'border-left-color'
-
-        # border-image
-        - 'border-image'
-        - 'border-image-source'
-        - 'border-image-width'
-        - 'border-image-outset'
-        - 'border-image-repeat'
-        - 'border-image-slice'
-
-        # box-shadow
-        - 'box-shadow'
-
-        # background
-        - 'background'
-        - 'background-attachment'
-        - 'background-clip'
-        - 'background-color'
-        - 'background-image'
-        - 'background-repeat'
-        - 'background-position'
-        - 'background-size'
-
-        # object-fit
-        - 'object-fit'
-        - 'object-position'
-
-        # cursor
-        - 'cursor'
-
-        # padding
-        - 'padding'
-        - 'padding-top'
-        - 'padding-right'
-        - 'padding-bottom'
-        - 'padding-left'
-
-        # width
-        - 'width'
-        - 'min-width'
-        - 'max-width'
-
-        # height
-        - 'height'
-        - 'min-height'
-        - 'max-height'
-
-        # overflow
-        - 'overflow'
-        - 'overflow-x'
-        - 'overflow-y'
-        - 'resize'
-
         # list-style
         - 'list-style'
         - 'list-style-type'
         - 'list-style-position'
         - 'list-style-image'
         - 'caption-side'
-
-        # tables
-        - 'table-layout'
-        - 'border-collapse'
-        - 'border-spacing'
-        - 'empty-cells'
-
-        # animation
-        - 'animation'
-        - 'animation-name'
-        - 'animation-duration'
-        - 'animation-timing-function'
-        - 'animation-delay'
-        - 'animation-iteration-count'
-        - 'animation-direction'
-        - 'animation-fill-mode'
-        - 'animation-play-state'
-
-        # vertical-alignment
-        - 'vertical-align'
-
-        # text-alignment and decoration
-        - 'direction'
-        - 'tab-size'
-        - 'text-align'
-        - 'text-align-last'
-        - 'text-justify'
-        - 'text-indent'
-        - 'text-transform'
-        - 'text-decoration'
-        - 'text-decoration-color'
-        - 'text-decoration-line'
-        - 'text-decoration-style'
-        - 'text-rendering'
-        - 'text-shadow'
-        - 'text-overflow'
-
-        # text-spacing
-        - 'line-height'
-        - 'word-spacing'
-        - 'letter-spacing'
-        - 'white-space'
-        - 'word-break'
-        - 'word-wrap'
-        - 'color'
-
-        # font
-        - 'font'
-        - 'font-family'
-        - 'font-size'
-        - 'font-size-adjust'
-        - 'font-stretch'
-        - 'font-weight'
-        - 'font-smoothing'
-        - 'osx-font-smoothing'
-        - 'font-variant'
-        - 'font-style'
 
         # content
         - 'content'
@@ -345,10 +225,168 @@ rules:
         - 'counter-reset'
         - 'counter-increment'
 
+        # User Interaction
+        - 'resize'
+        - 'cursor'
+        - 'user-select'
+
+        # animation
+        - 'transition'
+        - 'transition-delay'
+        - 'transition-duration'
+        - 'transition-property'
+        - 'transition-timing-function'
+        - 'transform'
+        - 'transform-origin'
+        - 'transform-style'
+        - '@keyframes'
+        - 'animation'
+        - 'animation-name'
+        - 'animation-duration'
+        - 'animation-timing-function'
+        - 'animation-delay'
+        - 'animation-iteration-count'
+        - 'animation-direction'
+        - 'animation-fill-mode'
+        - 'animation-play-state'
+        - 'backface-visibility'
+        - 'perspective'
+        - 'perspective-origin'
+
+        # text behaviour and styles
+        - 'text-align'
+        - 'text-align-last'
+        - 'vertical-align'
+        - 'white-space'
+        - 'text-decoration'
+        - 'text-decoration-color'
+        - 'text-decoration-style'
+        - 'text-decoration-line'
+        - 'text-emphasis'
+        - 'text-emphasis-color'
+        - 'text-emphasis-style'
+        - 'text-emphasis-position'
+        - 'text-indent'
+        - 'text-justify'
+        - 'text-transform'
+        - 'letter-spacing'
+        - 'word-spacing'
+        - 'text-outline'
+        - 'text-rendering'
+        - 'text-shadow'
+        - 'text-wrap'
+        - 'text-overflow'
+        - 'text-overflow-ellipsis'
+        - 'text-overflow-mode'
+        - 'word-wrap'
+        - 'word-break'
+        - 'tab-size'
+        - 'hyphens'
+        - 'pointer-events'
+        - 'direction'
+        - 'unicode-bidi'
+        - 'orphans'
+        - 'widows'
+
+        # object-fit
+        - 'object-fit'
+        - 'object-position'
+
+        # opacity and color
+        - 'opacity'
+        - 'filter'
+        - 'color'
+
+        # borders
+        - 'border'
+        - 'border-collapse'
+        - 'border-width'
+        - 'border-style'
+        - 'border-color'
+        - 'border-top'
+        - 'border-top-width'
+        - 'border-top-style'
+        - 'border-top-color'
+        - 'border-right'
+        - 'border-right-width'
+        - 'border-right-style'
+        - 'border-right-color'
+        - 'border-bottom'
+        - 'border-bottom-width'
+        - 'border-bottom-style'
+        - 'border-bottom-color'
+        - 'border-left'
+        - 'border-left-width'
+        - 'border-left-style'
+        - 'border-left-color'
+
+        # border-radius
+        - 'border-radius'
+        - 'border-top-left-radius'
+        - 'border-top-right-radius'
+        - 'border-bottom-left-radius'
+        - 'border-bottom-right-radius'
+
+        # border-image
+        - 'border-image'
+        - 'border-image-source'
+        - 'border-image-slice'
+        - 'border-image-width'
+        - 'border-image-outset'
+        - 'border-image-repeat'
+
+        # outline
+        - 'outline'
+        - 'outline-width'
+        - 'outline-style'
+        - 'outline-color'
+        - 'outline-offset'
+
+        # background
+        - 'background'
+        - 'background-color'
+        - 'background-image'
+        - 'background-repeat'
+        - 'background-attachment'
+        - 'background-position'
+        - 'background-position-x'
+        - 'background-position-y'
+        - 'background-clip'
+        - 'backgound-origin'
+        - 'background-size'
+
+        # box-shadow
+        - 'box-decoration-break'
+        - 'box-shadow'
+
+        # font
+        - 'font'
+        - 'font-family'
+        - 'src'
+        - '@font-feature-values'
+        - '@styleset'
+        - 'font-size'
+        - 'font-size-adjust'
+        - 'font-weight'
+        - 'font-style'
+        - 'font-variant'
+        - 'font-stretch'
+        - 'font-effect'
+
+        # text-spacing
+        - 'line-height'
+
         # breaks
         - 'page-break-before'
         - 'page-break-after'
         - 'page-break-inside'
+
+        # various subsequent rules
+        - '@media'
+        - '@supports'
+        - '@document'
+        - '@page'
+        - '@viewport'
 
   quotes: 1
   shorthand-values: 1

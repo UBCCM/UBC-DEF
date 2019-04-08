@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-
 <head>
 	<meta charset="utf-8" />
 	<title>The University of British Columbia | FORM TEST</title>
@@ -11,11 +10,10 @@
 	<meta name="viewport" content="width=device-width" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<link rel="shortcut icon" href="https://cdn.ubc.ca/clf/7.0.4/img/favicon.ico" />
-	<link rel="stylesheet" href="../../dist/css/styles-critical.min.css" />
-	<link rel="stylesheet" href="../../dist/css/dev/base.forms.dev.css" />
+	<link rel="stylesheet" href="../css/base/base.forms.css" />
+	<link rel="stylesheet" href="../css/styles-tailwind.css" />
 	<style>
 	/* https://basehold.it - baseline bg image - the 24 denotes the line height - change if needed */
-
 	.grid-wrapper {
 		background-image: url('https://basehold.it/i/24');
 	}
@@ -31,30 +29,40 @@
 				<div>
 					<h4>Text Input</h4>
 					<label for="name">Text Input:</label>
-					<input type="text" name="name" id="name" value="" tabindex="1" placeholder="This is placeholder text" class="appearance-none">
+					<input type="text" name="name" id="name" value="" placeholder="This is placeholder text">
 				</div>
 				<div class="checkbox--inline">
 					<h4>Inline Radio Buttons</h4>
-					<label for="radio-choice-1">Choice 1</label>
-					<input type="radio" name="radio-choice" id="radio-choice-1" tabindex="2" value="choice-1">
-					<label for="radio-choice-2">Choice 2</label>
-					<input type="radio" name="radio-choice" id="radio-choice-2" tabindex="3" value="choice-2">
+					<div>
+						<input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1">
+						<label for="radio-choice-1">Choice 1</label>
+					</div>
+					<div>
+						<input type="radio" name="radio-choice-2" id="radio-choice-2" value="choice-2">
+						<label for="radio-choice-2">Choice 2</label>
+					</div>
 				</div>
 				<div class="checkbox--block">
 					<h4>Radio Buttons</h4>
-					<label for="radio-choice-3">Choice 1</label>
-					<input type="radio" name="radio-choice-2" id="radio-choice-3" tabindex="2" value="choice-3">
-					<label for="radio-choice-4">Choice 2</label>
-					<input type="radio" name="radio-choice-2" id="radio-choice-4" tabindex="3" value="choice-4">
+					<div>
+						<input type="radio" name="radio-choice-3" id="radio-choice-3" value="choice-3">
+						<label for="radio-choice-3">Choice 1</label>
+					</div>
+					<div>
+						<input type="radio" name="radio-choice-4" id="radio-choice-4" value="choice-4">
+						<label for="radio-choice-4">Choice 2</label>
+					</div>
 				</div>
 				<div>
 					<h4>Select</h4>
-					<label for="select-choice">Select Dropdown Choice:</label>
-					<select name="select-choice" id="select-choice">
-						<option value="Choice 1">Choice 1</option>
-						<option value="Choice 2">Choice 2</option>
-						<option value="Choice 3">Choice 3</option>
-					</select>
+					<div>
+						<label for="select-choice">Select Dropdown Choice:</label>
+						<select name="select-choice" id="select-choice">
+							<option value="Choice 1">Choice 1</option>
+							<option value="Choice 2">Choice 2</option>
+							<option value="Choice 3">Choice 3</option>
+						</select>
+					</div>
 				</div>
 				<div>
 					<h4>Textarea</h4>
@@ -63,8 +71,14 @@
 				</div>
 				<div>
 					<h4>Checkboxes</h4>
-					<label for="checkbox">Checkbox:</label>
-					<input type="checkbox" name="checkbox">
+					<div>
+						<input type="checkbox" id="horns" name="horns">
+						<label for="horns">Horns</label>
+					</div>
+					<div class="switch">
+						<input type="checkbox" id="switch" /><label for="switch">Toggle</label>
+					</div>
+
 				</div>
 				<div>
 					<h4>Submit Button</h4>

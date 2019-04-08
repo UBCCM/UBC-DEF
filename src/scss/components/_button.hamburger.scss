@@ -21,18 +21,18 @@ $close-button--hover-color:	hsla(0, 0%, 100%, 1);
 	position: absolute;
 	top: 1rem;
 	right: 1rem;
-	transition: background $button--transistion-duration;
-	margin: 0;
-	border: 0;
-	border-radius: 3px;
-	box-shadow: none;
-	background-color: $button--background-color;
-	cursor: pointer;
-	padding: 0;
+	overflow: hidden;
 	width: $button--width;
 	height: $button--height;
-	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+	transition: background $button--transistion-duration;
 	text-indent: -200%;
+	border: 0;
+	border-radius: 3px;
+	background-color: $button--background-color;
+	box-shadow: none;
 	font-size: 0;
 	appearance: none;
 
@@ -46,18 +46,18 @@ $close-button--hover-color:	hsla(0, 0%, 100%, 1);
 		top: ($button--height / 2) - ($bar--thickness / 2);
 		right: $button--padding;
 		left: $button--padding;
-		background: $button--color;
 		height: $bar--thickness;
+		background: $button--color;
 
 		&::before,
 		&::after {
 			display: block;
 			position: absolute;
 			left: 0;
-			background-color: $button--color;
 			width: 100%;
 			height: $bar--thickness;
 			content: '';
+			background-color: $button--color;
 		}
 
 		&::before {
@@ -72,9 +72,9 @@ $close-button--hover-color:	hsla(0, 0%, 100%, 1);
 
 .#{$namespace}menu-label-close {
 	display: block;
-	border-bottom: 1px solid $close-button--border-bottom-color;
-	padding: .5rem;
 	width: $close-button--width;
+	padding: .5rem;
+	border-bottom: 1px solid $close-button--border-bottom-color;
 	font-size: 2rem;
 
 	&:hover {

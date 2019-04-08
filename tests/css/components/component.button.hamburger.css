@@ -1,0 +1,75 @@
+:root {
+  --menu--transition: transform .195s cubic-bezier(.694, .0482, .335, 1);
+  --brand-color: #002347;
+}
+
+.menu-label {
+  display: inline-block;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  overflow: hidden;
+  width: 45px;
+  height: 45px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: background .2s;
+  text-indent: -200%;
+  border: 0;
+  border-radius: 3px;
+  background-color: var(--brand-color);
+  box-shadow: none;
+  font-size: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.menu-label:focus {
+  outline: none;
+}
+
+.menu-label span {
+  display: block;
+  position: absolute;
+  top: 21px;
+  right: 10px;
+  left: 10px;
+  height: 3px;
+  background: rgba(255, 255, 255, .5);
+}
+
+.menu-label span::before,
+.menu-label span::after {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  content: '';
+  background-color: rgba(255, 255, 255, .5);
+}
+
+.menu-label span::before {
+  top: -8px;
+}
+
+.menu-label span::after {
+  bottom: -8px;
+}
+
+.menu-label-close {
+  display: block;
+  width: 300px;
+  padding: .5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, .5);
+  font-size: 2rem;
+}
+
+.menu-label-close:hover {
+  cursor: pointer;
+  color: white;
+}
+
+/*# sourceMappingURL=component.button.hamburger.css.map */

@@ -2,57 +2,38 @@
 // This file contains CSS helper classes.
 // -----------------------------------------------------------------------------
 
-
-// Widths
-.width--auto {
-	width: 'auto';
+// Visually hide content but show it for screen readers
+// https://webaim.org/techniques/css/invisiblecontent/
+.#{$namespace}visually-hidden,
+.#{$namespace}skip-link a {
+	position: absolute;
+	top: auto;
+	left: -300%;
+	overflow: hidden;
+	width: 1px;
+	height: 1px;
 }
 
-.width--one-fifth {
-	width: 20%;
+.#{$namespace}skip-link a:focus {
+	position: static;
+	width: auto;
+	height: auto;
 }
 
-.width--one-quarter {
-	width: 25%;
+.#{$namespace}appearance-none {
+	appearance: none;
 }
 
-.width--two-fifths {
-	width: 40%;
+
+// Transformation Utilities
+.#{$namespace}rotate-90 {
+	transform: rotate(90deg);
 }
 
-.width--one-half {
-	width: 50%;
+.#{$namespace}rotate-180 {
+	transform: rotate(180deg);
 }
 
-.width--three-fifths {
-	width: 60%;
-}
-
-.width--three-quarters {
-	width: 75%;
-}
-
-.width--four-fifths {
-	width: 80%;
-}
-
-.width--full {
-	width: 100%;
-}
-
-.width--full-screen {
-	width: 100vw;
-}
-
-// Heights
-.height--auto {
-	height: 'auto';
-}
-
-.height--full {
-	height: 100%;
-}
-
-.height--full-screen {
-	height: 100vh;
+.#{$namespace}rotate-270 {
+	transform: rotate(270deg);
 }

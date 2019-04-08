@@ -3,13 +3,23 @@
 // -----------------------------------------------------------------------------
 
 // From Typebase.scss v0.1.0 | https://github.com/devinhunt/typebase.css/blob/master/src/typebase.scss
+
+// Typefaces
+$default-typeface: $text-font-stack;
+
+$alternate-typeface: $text-serif-font-stack;
+
 // Typesetting variables.
-$base-font-size: 16; // as an integer. We convert the unit later. The default will result in 16px on desktop
-$base-line-height: 1.5; // as an integer. Defines how high the line height is as a multiple of font size
-$leading: $base-line-height * 1rem; // multiply the line height and add a unit. Defaults to rem.
-$default-typeface: sans-serif;
-$alternate-typeface: sans-serif;
-// TYPE SCALES:
+// Base size as an integer. We convert the unit later. The default will result in 16px on desktop
+$base-font-size: 16;
+
+// Line height as an integer. Defines how high the line height is as a multiple of font size
+$base-line-height: 1.5;
+
+// Multiply the line height and add a unit. Defaults to rem.
+$leading: $base-line-height * 1rem;
+
+// Type scales:
 // 1.067 Minor Second
 // 1.125 Major Second
 // 1.200 Minor Third
@@ -18,26 +28,48 @@ $alternate-typeface: sans-serif;
 // 1.414 Augmented Fourth
 // 1.500 Perfect Fifth
 // 1.618 Golden Ratio
-$scale: 1.2;
+$scale: 1.125;
+
 // The color of text when it is manually selected on page.
 $selected-text-color: #fff;
-// Allows setting a maximum line length for optimized legibility. We use em units so that this is relative to the current text size.
+
+// Set a maximum line length for optimized legibility. We use em units so that this is relative to the current text size.
 $textline-width: 30em;
 $textline-width--lg: 34em;
 $textline-width--sm: 20em;
 
-//
+
 // Default
-//
 html {
 	font-family: $default-typeface;
-	// font-size: ($base-font-size / 16) * 100%;
+	font-size: ($base-font-size / 16) * 100%;
+}
+
+@media (max-width: 700px) {
+	html {
+		/// set base to 14px - http://pxtoem.com
+		font-size: ($base-font-size / 16) * 87.5%;
+	}
+}
+
+@media (min-width: 1400px) {
+	html {
+		// set base to 20px - http://pxtoem.com
+		font-size: ($base-font-size / 16) * 125%;
+	}
+}
+
+@media (min-width: 1600px) {
+	html {
+		// set base to 24px - http://pxtoem.com
+		font-size: ($base-font-size / 16) * 150%;
+	}
 }
 
 // Selection color
 ::selection {
-	background: var(--brand-color);
 	color: $selected-text-color;
+	background: var(--brand-color);
 }
 
 // Copy & Lists
@@ -89,43 +121,43 @@ h6,
 h1,
 .#{$namespace}heading-one {
 	margin-top: 2 * $leading;
-	line-height: 5 * $leading;
 	font-size: (5 * $scale) * 1rem;
+	line-height: 5 * $leading;
 }
 
 h2,
 .#{$namespace}heading-two {
 	margin-top: 2 * $leading;
-	line-height: 4 * $leading;
 	font-size: (4 * $scale) * 1rem;
+	line-height: 4 * $leading;
 }
 
 h3,
 .#{$namespace}heading-three {
 	margin-top: 2 * $leading;
-	line-height: 3 * $leading;
 	font-size: (3 * $scale) * 1rem;
+	line-height: 3 * $leading;
 }
 
 h4,
 .#{$namespace}heading-four {
 	margin-top: 2 * $leading;
-	line-height: 2 * $leading;
 	font-size: (2 * $scale) * 1rem;
+	line-height: 2 * $leading;
 }
 
 h5,
 .#{$namespace}heading-five {
 	margin-top: $leading;
-	line-height: $leading;
 	font-size: (1 * $scale) * 1rem;
+	line-height: $leading;
 }
 
 h6,
 .#{$namespace}heading-six {
 	margin-top: $leading;
-	line-height: $leading;
 	font-size: ($scale / 1.5) * 1rem;
+	line-height: $leading;
 }
 
 // Tables
@@ -141,9 +173,15 @@ th {
 	line-height: ($base-line-height * $base-font-size) - 0px;
 }
 
+// Horizontal Rule
+hr {
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
 // Code blocks
 code,
-.text--code {
+.#{$namespace}text-code {
 	// Forces text to constrain to the line-height. Not ideal, but works.
 	vertical-align: bottom;
 }
@@ -151,119 +189,128 @@ code,
 // TEXT UTILITIES
 // -------------------
 // Sizes
-.text--lead {
-	margin-top: 1.25 * $leading;
-	margin-bottom: 0;
-	line-height: 1.5 * $leading;
-	font-size: (1.25 * $scale) * 1rem;
+.#{$namespace}text-lead {
+	//margin-top: 1.25 * $leading;
+	//margin-bottom: 0;
+	font-size: $scale * 1rem;
+	line-height: 1 * $leading;
 }
 
-.text--small {
+.#{$namespace}text-small {
 	font-size: 1rem * .875;
 }
 
 // Leading (line heights)
-.text--leading-none {
+.#{$namespace}text-leading-none {
 	line-height: ($base-line-height / 3) * 2;
 }
 
-.text--leading-tight {
+.#{$namespace}text-leading-tight {
 	line-height: ($base-line-height / 6) * 5;
 }
 
-.text--leading-normal {
+.#{$namespace}text-leading-normal {
 	line-height: $base-line-height;
 }
 
-.text--leading-loose {
+.#{$namespace}text-leading-loose {
 	line-height: ($base-line-height / 3) * 4;
 }
 
 // Alignment
-.text--center {
+.#{$namespace}text-serif {
+	font-family: $text-serif-font-stack;
+}
+
+.#{$namespace}text-sans {
+	font-family: $text-font-stack;
+}
+
+// Alignment
+.#{$namespace}text-center {
 	text-align: center;
 }
 
-.text--right {
+.#{$namespace}text-right {
 	text-align: right;
 }
 
-.text--left {
+.#{$namespace}text-left {
 	text-align: left;
 }
 
-.text--justify {
+.#{$namespace}text-justify {
 	text-align: justify;
 }
 
 // Case
-.text--uppercase {
+.#{$namespace}text-uppercase {
 	text-transform: uppercase;
 }
 
-.text--lowercase {
+.#{$namespace}text-lowercase {
 	text-transform: lowercase;
 }
 
-.text--normalcase {
+.#{$namespace}text-normalcase {
 	text-transform: none;
 }
 
-.text--capitalize {
+.#{$namespace}text-capitalize {
 	text-transform: capitalize;
 }
 
 // Position
 // Hug the block above you
-.text--hug {
+.#{$namespace}text-hug {
 	margin-top: 0;
 }
 
 // Tracking - modifies the letter spacing
-.text--tracking-tight {
+.#{$namespace}text-tracking-tight {
 	letter-spacing: -.05em;
 }
 
-.text--tracking-normal {
+.#{$namespace}text-tracking-normal {
 	letter-spacing: 0;
 }
 
-.text--tracking-wide {
+.#{$namespace}text-tracking-wide {
 	letter-spacing: .05em;
 }
 
 // Whitespace and wrapping
 // Adds an ellipsis after overflowing text
-.text--truncate {
+.#{$namespace}text-truncate {
 	overflow: hidden;
-	text-overflow: ellipsis;
 	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
-.text--whitespace-normal {
+.#{$namespace}text-whitespace-normal {
 	white-space: normal;
 }
 
-.text--whitespace-pre {
+.#{$namespace}text-whitespace-pre {
 	white-space: pre;
 }
 
-.text--break-words {
+.#{$namespace}text-break-words {
 	word-wrap: break-word;
 }
 
-.text--break-normal {
+.#{$namespace}text-break-normal {
 	word-wrap: normal;
 }
 
-.text--measure {
+.#{$namespace}text-measure {
 	max-width: $textline-width;
 }
 
-.text--measure--sm {
+.#{$namespace}text-measure-sm {
 	max-width: $textline-width--sm;
 }
 
-.text--measure--lg {
+.#{$namespace}text-measure-lg {
 	max-width: $textline-width--lg;
 }

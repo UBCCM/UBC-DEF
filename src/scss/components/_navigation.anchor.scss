@@ -9,15 +9,15 @@ $heading__anchor-offset: 1rem;
 
 .#{$namespace}heading__anchor {
 	display: inline-block;
-	transition: .125s opacity ease;
-	opacity: 0;
 	padding-left: $heading__anchor-offset;
+	transition: .125s opacity ease;
 	vertical-align: middle;
-	text-transform: none;
 	text-decoration: none;
-	line-height: $heading__anchor-size;
+	text-transform: none;
+	opacity: 0;
 	color: $heading__anchor-color;
 	font-size: $heading__anchor-size;
+	line-height: $heading__anchor-size;
 
 	&:hover {
 		text-decoration: underline;

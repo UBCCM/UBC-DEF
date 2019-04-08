@@ -1,37 +1,39 @@
 @charset 'UTF-8';
 
+// Tailwind's base styles
+@tailwind base;
+
+// Tailwind's components (ie. container)
+@tailwind components;
+
 // 1. Configuration and helpers
 @import
 'abstracts/variables',
 'abstracts/functions',
 'abstracts/mixins';
 
-// 2. Vendors
-@import
-'vendor/normalize';
+// 2. Vendors (if using Tailwind base styles, this is already included)
+// @import
+// 'vendor/normalize';
 
 // 3. Base stuff
 @import
-'base/base',
-'base/fonts',
+// 'base/base', (if using Tailwind base styles, this is already included)
 'base/typography',
+// 'base/forms',
+// 'base/forms__switch',
 'base/helpers';
 
-// 4. Layout-related sections
-@import
-'layout/header',
-'layout/footer';
+// 4. Components
+// @import
+// 'components/button',
+// 'components/button.hamburger',
+// 'components/navigation.drawer';
 
-// 5. Components
-@import
-'components/button',
-'components/button.hamburger',
-'components/navigation.drawer';
+// 5. Themes
+// @import
+//'themes/default';
 
-// 6. Page-specific styles
-@import
-'pages/home';
-
-// 7. Themes
-@import
-'themes/default';
+// Injects all of Tailwind's utility classes
+//See: https://github.com/tailwindcss/tailwindcss/issues/53#issuecomment-341413622 */
+@tailwind utilities;

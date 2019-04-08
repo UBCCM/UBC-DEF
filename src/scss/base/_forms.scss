@@ -17,18 +17,17 @@ $input--border-focus-color: $brand-color;
 $input--border: 1px solid $input--border-color;
 $input--border-focus: 1px solid $input--border-focus-color;
 $input--box-shadow-start: rgba(255, 255, 255, .4); // sets the border focus colour for form elements
-$input--box-shadow-end: rgba(248, 172, 30, .5); // sets the border focus colour for form elements
+$input--box-shadow-end: rgba(0, 35, 71, .5); // sets the border focus colour for form elements
 $input--color: $text-color;
 $input--placeholder-color: inherit;
 $input--placeholder-opacity: .5;
 
 label,
-.form-label {
-	line-height: $form-label--line-height;
+.#{$namespace}form-label {
 	color: $form-label--color;
-	//margin: 20px 0 10px 0;
 	font-size: $form-label--font-size;
 	font-weight: bold;
+	line-height: $form-label--line-height;
 }
 
 select {
@@ -59,41 +58,38 @@ button {
 
 
 input,
-.form-input  {
+.#{$namespace}form-input  {
+	height: $input--height;
 	margin-bottom: 0;
+	color: $input--color;
 	border: $input--border;
 	border-radius: $input--border-radius;
-	height: $input--height;
-	line-height: $input--line-height;
-	color: $input--color;
 	font-size: $form--font-size;
+	line-height: $input--line-height;
 
 	&:focus {
 		transition: border linear .2s, box-shadow linear .2s;
-		outline-style: none;
 		border: $input--border-focus;
+		outline-style: none;
 		box-shadow: inset 0 1px 1px $input--box-shadow-start, 0 0 8px $input--box-shadow-end;
 	}
 }
 
 textarea,
-.form-textarea {
-	border: $input--border;
-	border-radius: $input--border-radius;
+.#{$namespace}form-textarea {
 	padding: .5rem;
 	resize: vertical;
-	line-height: $input--line-height;
 	color: $input--color;
+	border: $input--border;
+	border-radius: $input--border-radius;
 	font-size: $form--font-size;
+	line-height: $input--line-height;
 
 	&:focus {
 		transition: border linear .2s, box-shadow linear .2s;
-		outline-style: none;
 		border: $input--border-focus;
+		outline-style: none;
 		box-shadow: inset 0 1px 1px $input--box-shadow-start, 0 0 8px $input--box-shadow-end;
 	}
 }
 
-.appearance-none {
-	appearance: none;
-}

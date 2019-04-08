@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="utf-8" />
+	<title>The University of British Columbia | FORM TEST</title>
+	<meta name="description" content="TEST" />
+	<meta name="author" content="Someone" />
+	<meta name="handheldfriendly" content="true" />
+	<meta name="mobileoptimized" content="320" />
+	<meta name="viewport" content="width=device-width" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<link rel="shortcut icon" href="https://cdn.ubc.ca/clf/7.0.4/img/favicon.ico" />
+	<link rel="stylesheet" href="../css/base/base.forms.css" />
+	<link rel="stylesheet" href="../css/styles-tailwind.css" />
+	<style>
+	/* https://basehold.it - baseline bg image - the 24 denotes the line height - change if needed */
+	.grid-wrapper {
+		background-image: url('https://basehold.it/i/24');
+	}
+	</style>
+</head>
+
+<body class="">
+	<div class="grid-wrapper" style="padding:0 .5rem ">
+		<main class="opening__section">
+			<h1 class="text-xl">Welcome to UBC - H1</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<form id="test-form" action="#" method="post">
+				<div>
+					<h4 class="mt-4">Text Input</h4>
+					<div class="styled-text-input">
+						<label for="name">Text Input:</label>
+						<input type="text" name="name" id="name" value="" placeholder="This is placeholder text">
+					</div>
+				</div>
+				<h4 class="mt-4">Inline Radio Buttons</h4>
+				<div class="form--inline">
+					<div class="styled-radios">
+						<div class="radio">
+							<input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1">
+							<label for="radio-choice-1">Choice 1</label>
+						</div>
+						<div class="radio">
+							<input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2">
+							<label for="radio-choice-2">Choice 2</label>
+						</div>
+						<div class="radio">
+							<input type="radio" name="radio-choice" id="radio-choice-3" value="choice-3" disabled="disabled">
+							<label for="radio-choice-3">Choice 3 [disabled]</label>
+						</div>
+					</div>
+				</div>
+				<h4 class="mt-4">Radio Buttons</h4>
+				<div class="checkbox--block">
+					<div class="styled-radios">
+						<div class="radio">
+							<input type="radio" name="radio-choice-a" id="radio-choice-a" value="choice-a">
+							<label for="radio-choice-a">Choice A</label>
+						</div>
+						<div class="radio">
+							<input type="radio" name="radio-choice-a" id="radio-choice-b" value="choice-b">
+							<label for="radio-choice-b">Choice B</label>
+						</div>
+					</div>
+				</div>
+				<div>
+					<h4 class="mt-4">Select</h4>
+					<div class="styled-select">
+						<label for="select-choice">Select Dropdown Choice:</label>
+						<select name="select-choice" id="select-choice">
+							<option value="Choice 1">Choice 1</option>
+							<option value="Choice 2">Choice 2</option>
+							<option value="Choice 3">Choice 3</option>
+						</select>
+					</div>
+				</div>
+				<div>
+					<h4 class="mt-4">Textarea</h4>
+					<div class="styled-textarea">
+						<label for="textarea">Textarea:</label>
+						<textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+					</div>
+				</div>
+				<div>
+					<h4 class="mt-4">Checkboxes</h4>
+					<div class="styled-checkboxes">
+						<div class="checkbox">
+							<input type="checkbox" id="horns" name="horns">
+							<label for="horns">Horns</label>
+						</div>
+						<div class="checkbox">
+							<input type="checkbox" id="horns2" name="horns2" disabled="disabled">
+							<label for="horns2">Horns2 [disabled]</label>
+						</div>
+					</div>
+					<div class="switch">
+						<input type="checkbox" id="switch" /><label for="switch">Toggle</label>
+					</div>
+
+				</div>
+				<div>
+					<h4 class="mt-4">Submit Button</h4>
+					<input type="submit" value="Submit" class="submit-button">
+				</div>
+			</form>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+			<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</main>
+	</div>
+</body>
+</html>

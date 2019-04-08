@@ -1,0 +1,31 @@
+:root {
+  --menu--transition: transform .195s cubic-bezier(.694, .0482, .335, 1);
+  --brand-color: #002347;
+}
+
+.heading__anchor {
+  display: inline-block;
+  padding-left: 1rem;
+  transition: .125s opacity ease;
+  vertical-align: middle;
+  text-decoration: none;
+  text-transform: none;
+  opacity: 0;
+  color: var(--brand-color);
+  font-size: .875rem;
+  line-height: .875rem;
+}
+
+.heading__anchor:hover {
+  text-decoration: underline;
+}
+
+h2:hover .heading__anchor,
+h3:hover .heading__anchor,
+h4:hover .heading__anchor,
+h5:hover .heading__anchor,
+h6:hover .heading__anchor {
+  opacity: .9;
+}
+
+/*# sourceMappingURL=component.navigation.anchor.css.map */

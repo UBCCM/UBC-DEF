@@ -1,0 +1,63 @@
+// -----------------------------------------------------------------------------
+// This file contains default form styles.
+// -----------------------------------------------------------------------------
+
+// local variables
+$form--font-size: $base-font-size * 1px; // sets the font size of form elements
+$form-label--color: $brand-color;
+$form-label--line-height: 1rem;
+$form-label--font-size: $form-label--line-height;
+
+$input--height: $base-line-height * 1.5rem;
+$input--line-height: $base-line-height * 1.5rem;
+$input--width: $text-color;
+$input--border-radius: 2px; // sets the border radius for form elements
+$input--border-color: $brand-color; // sets the border colour for form elements
+$input--border-focus-color: $brand-color;
+$input--border: 1px solid $input--border-color;
+$input--border-focus: 1px solid $input--border-focus-color;
+$input--box-shadow-start: rgba(255, 255, 255, .4); // sets the border focus colour for form elements
+$input--box-shadow-end: rgba(0, 35, 71, .5); // sets the border focus colour for form elements
+$input--color: $text-color;
+$input--placeholder-color: inherit;
+$input--placeholder-opacity: .5;
+$input--switch-background: #ccc;
+$white: #fff;
+
+.#{$namespace}switch [type='checkbox'] {
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+.#{$namespace}switch label {
+	display: block;
+	position: relative;
+	width: 3rem;
+	height: 1.5rem;
+	cursor: pointer;
+	text-indent: -9999px;
+	border-radius: 1rem;
+	background: $input--switch-background;
+}
+
+.#{$namespace}switch label::after {
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	width: 1.4rem;
+	height: 1.4rem;
+	content: '';
+	transition: .125s;
+	border-radius: 1.4rem;
+	background: $white;
+}
+
+.#{$namespace}switch input:checked + label {
+	background: $brand-color;
+}
+
+.#{$namespace}switch input:checked + label::after {
+	left: calc(100% - 1px);
+	transform: translateX(-100%);
+}

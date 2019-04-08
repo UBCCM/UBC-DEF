@@ -1,0 +1,5 @@
+// Injects all of Tailwind's utility classes and any component classes - all base classes are omitted.
+//See: https://github.com/tailwindcss/tailwindcss/issues/53#issuecomment-341413622 */
+@tailwind utilities;
+
+@tailwind components;

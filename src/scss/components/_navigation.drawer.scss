@@ -13,26 +13,26 @@ $menu--transition: var(--menu--transition);
 
 .#{$namespace}grid-wrapper {
 	position: relative;
+	overflow-x: hidden;
 	transition: $menu--transition;
 	// will-change: transform;
 	background-color: $wrapper--background-color;
 	// add a background colour to prevent seeing the menu transition on load
-	overflow-x: hidden;
 }
 
 .#{$namespace}menu--push-right {
 	position: fixed;
 	top: 0;
 	right: 0;
-	transform: translate3d($menu--width, 0, 0);
-	transition: $menu--transition;
 	z-index: -1;
 	// put the menu below the wrapper on load so we don't see the triggered transition
-	background-color: $nav--background-color;
-	width: $menu--width;
-	height: 100%;
 	overflow-x: hidden;
 	overflow-y: overlay;
+	width: $menu--width;
+	height: 100%;
+	transition: $menu--transition;
+	transform: translate3d($menu--width, 0, 0);
+	background-color: $nav--background-color;
 	// will-change: transform;
 }
 
@@ -45,9 +45,9 @@ $menu--transition: var(--menu--transition);
 	}
 
 	&:checked~.#{$namespace}menu--push-right {
-		transform: translate3d(0, 0, 0);
-		// width minus 20px to account for scroll area in safari
 		z-index: 200;
 		// move the menu above the wrapper
+		transform: translate3d(0, 0, 0);
+		// width minus 20px to account for scroll area in safari
 	}
 }
