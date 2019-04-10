@@ -181,6 +181,18 @@ function positioncss() {
 	.pipe(dest('build/css/utilities/position/'))
 }
 
+function spacingcss() {
+	return src('build/css/styles-utilities.css')
+	.pipe(purgecss({
+		content: ['tests/empty/index.html'],
+		whitelistPatterns: [/^p-/, /^m-/, /--p-/, /--m-/, /^px-/, /^mx-/, /--px-/, /--mx-/, /^py-/, /^my-/, /--py-/, /--my-/, /^pt-/, /^mt-/, /--pt-/, /--mt-/, /^pr-/, /^mr-/, /--pr-/, /--mr-/, /^pb-/, /^mb-/, /--pb-/, /--mb-/, /^pl-/, /^ml-/, /--pl-/, /--ml-/]
+	}))
+	.pipe(rename({
+		basename: "utilities.spacing"
+	}))
+	.pipe(dest('build/css/utilities/spacing/'))
+}
+
 function tablecss() {
 	return src('build/css/styles-utilities.css')
 	.pipe(purgecss({
@@ -260,7 +272,7 @@ function watcher() {
 exports.serverstart = parallel(startserver);
 exports.serverstop = parallel(stopserver);
 exports.watch = parallel(watcher);
-exports.utilities = parallel(backgroundcss, bordercss, containercss, displaycss, flexcss, floatcss, heightcss, interactivecss, ordercss, positioncss, tablecss, textcss, widthcss);
+exports.utilities = parallel(backgroundcss, bordercss, containercss, displaycss, flexcss, floatcss, heightcss, interactivecss, ordercss, positioncss, spacingcss, tablecss, textcss, widthcss);
 exports.lint = series(lint);
 exports.styles = series(styles);
 exports.images = parallel(images);
