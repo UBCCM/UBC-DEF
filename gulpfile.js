@@ -1,4 +1,4 @@
-const { watch, series, src } = require('gulp');
+const { watch, series, src, dest } = require('gulp');
 const sass = require('gulp-sass');
 const rename = require('gulp-rename');
 const nano = require('gulp-cssnano');
@@ -31,14 +31,14 @@ function styles() {
 		browsers: ['last 6 versions']
 	}))
 	.pipe(sourcemaps.write('./'))
-	.pipe(gulp.dest(paths.dist.css))
+	.pipe(dest(paths.dist.css))
 }
 
 function minify() {
 	return src(paths.dist.css + '/ubcclf.css')
 	.pipe(nano({discardComments: {removeAll: true}, zindex: false}))
 	.pipe(rename('ubcclf.min.css'))
-	.pipe(gulp.dest(paths.dist.css))
+	.pipe(dest(paths.dist.css))
 }
 
 function watcher() {
@@ -48,4 +48,4 @@ function watcher() {
 exports.watch = series(watcher);
 exports.styles = series(styles);
 exports.minify = series(minify);
-exports.default = series(styles, minify, watch);
+exports.default = series(styles, minify, watcher);
