@@ -16,7 +16,7 @@ var paths = {
 };
 
 /***************************************
- * 
+ *
  *	Default CLF SASS compiling
  *  Run command "gulp" to start
  *
@@ -34,15 +34,15 @@ gulp.task('styles', function() {
 		.pipe(gulp.dest(paths.dist.css))
 });
 
-gulp.task('minify', ['styles'], function() {
+gulp.task('minify', function() {
 	return gulp.src(paths.dist.css + '/ubcclf.css')
 		.pipe(nano({discardComments: {removeAll: true}, zindex: false}))
 		.pipe(rename('ubcclf.min.css'))
 		.pipe(gulp.dest(paths.dist.css))
 });
 
-gulp.task('watch', ['styles', 'minify'], function(){
-	gulp.watch(paths.src.sass + '/**/*.scss', ['styles', 'minify']); 
+gulp.task('watch', function(){
+	gulp.watch(paths.src.sass + '**/*.scss', gulp.series('styles', 'minify'));
 });
 
-gulp.task('default', ['styles', 'minify', 'watch'], function() { });
+gulp.task('default', gulp.series('styles', 'minify', 'watch'));
