@@ -1,25 +1,69 @@
+# Contributing
+Thank you to support our work. We've put together the following documents for you to start contribution to UBC-DEF.
+
+If you have questions towards UBC-DEF, feel free to reach out to [UBC Brand and Marketing](https://brand.ubc.ca/support/contact-us/).
+
+## Table of Content
+
+- [UBC Brand Identity Elements and Policy 94](#ubc-brand-identity-elements-and-policy-94)
+- User Stories / Guiding Principle
+
+### Contributors
+1. Review
+	- [Code of Conduct](#code-of-conduct)
+	- [Coding Styleguide](#coding-styleguide)
+	- Testing and Linting
+	- [Browser Support](#browser-support)
+2. [Submitting issues](#submitting-issues)
+3. [Issue a Pull Request](#pull-requests)
+	- [Developer Certificate of Origin](#developer-certificate-of-origin)
+	- [Git Commit](#git-commit-messages)
+	- [Workflow](#workflow)
+
+### Maintainers
+- Application Tasks
+- Changelog and Documentation
+- Deploying and Publishing
+
+## UBC Brand Identity Elements and Policy 94
+The use of UBC's Brand Identity Elements are protected by Policy #94
+- [UBC Brand Visual Identity Guideline](http://assets.brand.ubc.ca/downloads/ubc_visual_identity_guide.pdf)
+- [Policy 94](https://universitycounsel.ubc.ca/files/2011/10/policy94.pdf) 
+
+## Code of Conduct
+- Please review our [Code of Conduct](/CODE_OF_CONDUCT.md) before contribution to learn about our community standards.
+
+## Coding Styleguide
+- Please review our [coding styleguide](https://github.com/UBCCM/guides) for coding convention to follow
+- Lint rules are set to follow the coding style guide.
+
+## Browser Support
+- Any contribution will need to work with the following browsers.
+- Table with browser compliance
+
 ## Submitting Issues
 
 * Avoid submitting related issue 
-    * Perform a [cursory search](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aissue+user%3Aubccm) before reporting an issue.
+    * Perform a [cursory search](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aissue+repo%3Aubccm%2Fubc-def) before reporting an issue.
     * [Create new issue](https://github.com/ubccm/ubc-clf8/issues) only if it has not been reported.
 * Provide as much detail as possible on the issue
+	* Issue 
     * For title, be as descriptive as possible.
     * In description, explaining at the high level what it is about, and should be written in the same style as [Git commit messages](#git-commit-messages).
     * If reporting a bug, clearly describe the issue including steps to reproduce. 
     * When submitting a browser bug, please include the browser, version, operating system, and operating system version.
     * Include screenshots whenever possible to help visualize the issue.
 * Create pull request **ONLY** after receiving feedback on issue.
-    * Do not open a [pull request](#pull-requests) to resolve an issue without first receiving feedback from a `collaborator` or `owner` and having them agree on a solution forward.
+    * Do not open a [pull request](#pull-requests) to resolve an issue without first receiving feedback from a `owner` or `maintainer` and having them agree on a solution forward.
 * Use task lists to track sub-items
     * Issues that have a number of sub-items that need to be complete should use [task lists](https://github.com/blog/1375%0A-task-lists-in-gfm-issues-pulls-comments) to track the sub-items in the main issue comment.
 
 ## Pull Requests
 
-* **DO NOT ISSUE A PULL REQUEST WITHOUT FIRST [SUBMITTING AN ISSUE](#submitting-issues)**
+* **PULL REQUEST WITHOUT FIRST [SUBMITTING AN ISSUE](#submitting-issues) WILL BE CLOSED**
 * **ALL PULL REQUESTS MUST INCLUDE A [DEVELOPER CERTIFICATE OF ORIGIN](#developer-certificate-of-origin)**
 * [Submit an issue first](#submitting-issues)
-    * Pull requests should only be created on related issues and after receiving feedback from `owner` or `collaborator`.
+    * Pull requests should only be created on related issues and after receiving feedback from `owner` or `maintainer`.
     * If the pull request closes an issue, [please reference its closing from a commit messages](https://help.github.com/articles/closing-issues-via-commit-messages/).
     * Pull requests not referencing any issues will be closed.
 * Be descriptive
@@ -29,6 +73,11 @@
     * Check for unnecessary whitespace with `git diff --check` before committing.
     * Ensure that [EditorConfig](http://editorconfig.org/) installed in the editor used to work on the site and that it is functioning properly.
     * Do not squash or rebase commits when submitting a Pull Request. It makes it much harder to follow work and make incremental changes.
+* Branches
+	* Always checkout `master` to get latest changes.
+	* Create a new branch with descriptive name and referencing the reviewed issue.
+	*
+
 
 ### Developer Certificate of Origin
 
@@ -78,7 +127,13 @@ By making a contribution to this project, I certify that:
 * Use the imperative mood (`"Move cursor to…"` not `"Moves cursor to…"`)
 * Limit the first line to 72 characters or less
 
-### References
+
+## Deploying and Publishing
+### Publishing
+
+
+## References
 
 * sass-lint: https://github.com/sasstools/sass-lint/blob/develop/CONTRIBUTING.md
 * puppet: https://github.com/puppetlabs/puppet/blob/master/CONTRIBUTING.md
+* alphagov: https://github.com/alphagov/govuk-frontend/blob/master/CONTRIBUTING.md
