@@ -10,15 +10,15 @@ If you have questions towards UBC-DEF, feel free to reach out to [UBC Brand and 
 
 ### Contributors
 1. Review
-	- [Code of Conduct](#code-of-conduct)
-	- [Coding Styleguide](#coding-styleguide)
-	- Testing and Linting
-	- [Browser Support](#browser-support)
+    - [Code of Conduct](#code-of-conduct)
+    - [Coding Styleguide](#coding-styleguide)
+    - Testing and Linting
+    - [Browser Support](#browser-support)
 2. [Submitting issues](#submitting-issues)
 3. [Issue a Pull Request](#pull-requests)
-	- [Developer Certificate of Origin](#developer-certificate-of-origin)
-	- [Git Commit](#git-commit-messages)
-	- [Workflow](#workflow)
+    - [Developer Certificate of Origin](#developer-certificate-of-origin)
+    - [Git Commit](#git-commit-messages)
+    - [Workflow](#workflow)
 
 ### Maintainers
 - Application Tasks
@@ -39,7 +39,26 @@ The use of UBC's Brand Identity Elements are protected by Policy #94
 
 ## Browser Support
 - Any contribution will need to work with the following browsers.
-- Table with browser compliance
+- We aim to support all below browsers based on browsers usage greater than 1%*
+
+| Operating system | Browser                                
+|----------------- |----------------------------------------
+| Windows          | Internet Explorer 11                   
+| Windows          | Edge (latest 2 versions)               
+| Windows          | Google Chrome (latest 2 versions)      
+| Windows          | Mozilla Firefox (latest 2 versions)    
+| macOS            | Safari 12+                             
+| macOS            | Google Chrome (latest 2 versions)      
+| macOS            | Mozilla Firefox (latest 2 versions)    
+| iOS              | Safari for iOS 9.3+                    
+| iOS              | Google Chrome (latest 2 versions)      
+| Android          | Google Chrome (latest 2 versions)      
+| Android          | Samsung Internet (latest 2 versions)   
+| Android          | UC Browser (latest 2 versions)         
+| Android          | Opera Mini (latest 2 versions)         
+
+*Browsers with > 1% usage based on [Can I use browser usage table](https://caniuse.com/usage-table).
+
 
 ## Submitting Issues
 
@@ -47,7 +66,7 @@ The use of UBC's Brand Identity Elements are protected by Policy #94
     * Perform a [cursory search](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aissue+repo%3Aubccm%2Fubc-def) before reporting an issue.
     * [Create new issue](https://github.com/ubccm/ubc-clf8/issues) only if it has not been reported.
 * Provide as much detail as possible on the issue
-	* Issue 
+    * Issue 
     * For title, be as descriptive as possible.
     * In description, explaining at the high level what it is about, and should be written in the same style as [Git commit messages](#git-commit-messages).
     * If reporting a bug, clearly describe the issue including steps to reproduce. 
@@ -74,9 +93,9 @@ The use of UBC's Brand Identity Elements are protected by Policy #94
     * Ensure that [EditorConfig](http://editorconfig.org/) installed in the editor used to work on the site and that it is functioning properly.
     * Do not squash or rebase commits when submitting a Pull Request. It makes it much harder to follow work and make incremental changes.
 * Branches
-	* Always checkout `master` to get latest changes.
-	* Create a new branch with descriptive name and referencing the reviewed issue.
-	*
+    * Always checkout `master` to get latest changes.
+    * Create a new branch with descriptive name and referencing the reviewed issue.
+    *
 
 
 ### Developer Certificate of Origin
