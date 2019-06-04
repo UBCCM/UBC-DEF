@@ -12,6 +12,7 @@ If you have questions towards UBC-DEF, feel free to reach out to [UBC Brand and 
 1. Review
     - [Code of Conduct](#code-of-conduct)
     - [Coding Styleguide](#coding-styleguide)
+	- [License](#license)
     - Testing and Linting
     - [Browser Support](#browser-support)
 2. [Submitting issues](#submitting-issues)
@@ -33,13 +34,16 @@ The use of UBC's Brand Identity Elements are protected by Policy #94
 ## Code of Conduct
 - Please review our [Code of Conduct](/CODE_OF_CONDUCT.md) before contribution to learn about our community standards.
 
+## License
+- UBC-DEF is licensed under the [MIT License](/LICENSE)
+
 ## Coding Styleguide
 - Please review our [coding styleguide](https://github.com/UBCCM/guides) for coding convention to follow
 - Lint rules are set to follow the coding style guide.
 
 ## Browser Support
 - Any contribution will need to work with the following browsers.
-- We aim to support all below browsers based on browsers usage greater than 1%*
+- We aim to support all below browsers based on browsers usage greater than one per cent (>1%)*
 
 | Operating system | Browser                                
 |----------------- |----------------------------------------
