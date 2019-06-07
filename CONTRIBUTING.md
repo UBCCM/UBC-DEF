@@ -43,7 +43,7 @@ The use of UBC's Brand Identity Elements are protected by Policy #94
 
 ## Browser Support
 - Any contribution will need to work with the following browsers.
-- We aim to support all below browsers based on browsers usage greater than one per cent (>1%)*
+- We aim to support all below browsers based on browsers usage greater than 1.5%*
 
 | Operating system | Browser                                
 |----------------- |----------------------------------------
@@ -51,17 +51,16 @@ The use of UBC's Brand Identity Elements are protected by Policy #94
 | Windows          | Edge (latest 2 versions)               
 | Windows          | Google Chrome (latest 2 versions)      
 | Windows          | Mozilla Firefox (latest 2 versions)    
-| macOS            | Safari 12+                             
+| macOS            | Safari (latest 2 versions)                            
 | macOS            | Google Chrome (latest 2 versions)      
 | macOS            | Mozilla Firefox (latest 2 versions)    
-| iOS              | Safari for iOS 9.3+                    
+| iOS              | Safari for iOS (latest 2 versions)                    
 | iOS              | Google Chrome (latest 2 versions)      
 | Android          | Google Chrome (latest 2 versions)      
 | Android          | Samsung Internet (latest 2 versions)   
 | Android          | UC Browser (latest 2 versions)         
-| Android          | Opera Mini (latest 2 versions)         
 
-*Browsers with > 1% usage based on [Can I use browser usage table](https://caniuse.com/usage-table).
+*Browsers with > 1.5% usage based on [Can I use browser usage table](https://caniuse.com/usage-table).
 
 
 ## Submitting Issues
