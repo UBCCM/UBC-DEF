@@ -21,14 +21,15 @@
   },
   "homepage": "https://github.com/UBCCM/ubc-clf8#readme",
   "dependencies": {
+    "autoprefixer": "^9.6.0",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^6.1.0",
-    "gulp-cssnano": "^2.1.3",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5"
   },
   "devDependencies": {
-    "snyk": "^1.163.0"
+    "cssnano": "^4.1.10",
+    "gulp-postcss": "^8.0.0",
+    "snyk": "^1.185.5"
   }
 }

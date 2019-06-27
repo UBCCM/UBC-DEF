@@ -1,9 +1,10 @@
 const { watch, series, src, dest } = require('gulp');
-const sass = require('gulp-sass');
-const rename = require('gulp-rename');
-const nano = require('gulp-cssnano');
-const sourcemaps = require('gulp-sourcemaps');
-const autoprefixer = require('gulp-autoprefixer');
+const sass				= require('gulp-sass');
+const rename			= require('gulp-rename');
+const postcss			= require('gulp-postcss');
+const cssnano			= require('cssnano');
+const sourcemaps		= require('gulp-sourcemaps');
+const autoprefixer		= require('autoprefixer');
 
 const paths = {
 	src: {
@@ -11,7 +12,9 @@ const paths = {
 		css: 	'src/css/'
 	},
     dist: {
-        css:    'dist/css/'
+		path: 	'dist/css/',
+		css:    'ubcclf.css',
+		minify_css: 'ubcclf.min.css'
     }
 };
 
@@ -24,28 +27,38 @@ const paths = {
 
 function styles() {
 	return src(paths.src.sass + 'MAIN.scss')
-	.pipe(sourcemaps.init())
-	.pipe(sass().on('error', sass.logError))
-	.pipe(rename('ubcclf.css'))
-	.pipe(autoprefixer({
-		browsers: ['last 6 versions']
-	}))
-	.pipe(sourcemaps.write('./'))
-	.pipe(dest(paths.dist.css))
-}
+		.pipe(sass().on('error', sass.logError))
+		.pipe(rename(paths.dist.css))
+		.pipe(dest(paths.dist.path))
+};
+
+function autoprefix() {
+	var plugins = [
+		autoprefixer()
+	];
+	return src(paths.dist.path + paths.dist.css)
+		.pipe(sourcemaps.init())
+		.pipe(postcss(plugins))
+		.pipe(sourcemaps.write('./'))
+		.pipe(dest(paths.dist.path))
+};
 
 function minify() {
-	return src(paths.dist.css + '/ubcclf.css')
-	.pipe(nano({discardComments: {removeAll: true}, zindex: false}))
-	.pipe(rename('ubcclf.min.css'))
-	.pipe(dest(paths.dist.css))
-}
+	var plugins = [
+        cssnano()
+    ];
+	return src(paths.dist.path + paths.dist.css)
+		.pipe(postcss(plugins))
+		.pipe(rename(paths.dist.minify_css))
+		.pipe(dest(paths.dist.path))
+};
 
 function watcher() {
-	watch(paths.src.sass + '**/*.scss', series(styles, minify));
-}
+	watch(paths.src.sass + '**/*.scss', series(styles, autoprefix, minify));
+};
 
 exports.watch = series(watcher);
 exports.styles = series(styles);
+exports.autoprefix = series(autoprefix);
 exports.minify = series(minify);
-exports.default = series(styles, minify, watcher);
+exports.default = series(styles, autoprefix, minify, watcher);
