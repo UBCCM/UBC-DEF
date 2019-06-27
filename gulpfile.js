@@ -1,12 +1,12 @@
-var gulp            = require('gulp');
-var sass            = require('gulp-sass');
-var rename          = require('gulp-rename');
-var postcss			= require('gulp-postcss');
-var cssnano         = require('cssnano');
-var sourcemaps      = require('gulp-sourcemaps');
-var autoprefixer    = require('autoprefixer');
+const { watch, series, src, dest } = require('gulp');
+const sass				= require('gulp-sass');
+const rename			= require('gulp-rename');
+const postcss			= require('gulp-postcss');
+const cssnano			= require('cssnano');
+const sourcemaps		= require('gulp-sourcemaps');
+const autoprefixer		= require('autoprefixer');
 
-var paths = {
+const paths = {
 	src: {
 		sass:	'src/sass/',
 		css: 	'src/css/'
@@ -25,36 +25,40 @@ var paths = {
  *
  ***************************************/
 
-gulp.task('styles', function() {
-	return gulp.src(paths.src.sass + 'MAIN.scss')
+function styles() {
+	return src(paths.src.sass + 'MAIN.scss')
 		.pipe(sass().on('error', sass.logError))
 		.pipe(rename(paths.dist.css))
-		.pipe(gulp.dest(paths.dist.path))
-});
+		.pipe(dest(paths.dist.path))
+};
 
-gulp.task('prefix', function() {
+function prefix() {
 	var plugins = [
 		autoprefixer()
 	];
-	return gulp.src(paths.dist.path + paths.dist.css)
+	return src(paths.dist.path + paths.dist.css)
 		.pipe(sourcemaps.init())
 		.pipe(postcss(plugins))
 		.pipe(sourcemaps.write('./'))
-		.pipe(gulp.dest(paths.dist.path))
-});
+		.pipe(dest(paths.dist.path))
+};
 
-gulp.task('minify', function() {
+function minify() {
 	var plugins = [
         cssnano()
     ];
-	return gulp.src(paths.dist.path + paths.dist.css)
+	return src(paths.dist.path + paths.dist.css)
 		.pipe(postcss(plugins))
 		.pipe(rename(paths.dist.minify_css))
-		.pipe(gulp.dest(paths.dist.path))
-});
+		.pipe(dest(paths.dist.path))
+};
 
-gulp.task('watch', function(){
-	gulp.watch(paths.src.sass + '**/*.scss', gulp.series('styles', 'prefix', 'minify'));
-});
+function watcher() {
+	watch(paths.src.sass + '**/*.scss', series(styles, prefix, minify));
+};
 
-gulp.task('default', gulp.series('styles', 'prefix', 'minify', 'watch'));
+exports.watch = series(watcher);
+exports.styles = series(styles);
+exports.prefix = series(prefix);
+exports.minify = series(minify);
+exports.default = series(styles, prefix, minify, watcher);
