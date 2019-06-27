@@ -32,7 +32,7 @@ function styles() {
 		.pipe(dest(paths.dist.path))
 };
 
-function prefix() {
+function autoprefix() {
 	var plugins = [
 		autoprefixer()
 	];
@@ -54,11 +54,11 @@ function minify() {
 };
 
 function watcher() {
-	watch(paths.src.sass + '**/*.scss', series(styles, prefix, minify));
+	watch(paths.src.sass + '**/*.scss', series(styles, autoprefix, minify));
 };
 
 exports.watch = series(watcher);
 exports.styles = series(styles);
-exports.prefix = series(prefix);
+exports.autoprefix = series(autoprefix);
 exports.minify = series(minify);
-exports.default = series(styles, prefix, minify, watcher);
+exports.default = series(styles, autoprefix, minify, watcher);
