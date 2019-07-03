@@ -4,7 +4,9 @@
   "description": "Common Look and Feel framework for UBC",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "snyk test"
+    "test": "snyk test",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -25,11 +27,12 @@
     "gulp": "^4.0.2",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5"
+    "gulp-sourcemaps": "^2.6.5",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "cssnano": "^4.1.10",
-    "gulp-postcss": "^8.0.0",
-    "snyk": "^1.185.5"
-  }
+    "gulp-postcss": "^8.0.0"
+  },
+  "snyk": true
 }
