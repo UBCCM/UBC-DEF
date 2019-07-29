@@ -1,17 +1,20 @@
-var gulp            = require('gulp');
-var sass            = require('gulp-sass');
-var rename          = require('gulp-rename');
-var nano            = require('gulp-cssnano');
-var sourcemaps      = require('gulp-sourcemaps');
-var autoprefixer    = require('gulp-autoprefixer');
+const { watch, series, src, dest } = require('gulp');
+const sass				= require('gulp-sass');
+const rename			= require('gulp-rename');
+const postcss			= require('gulp-postcss');
+const cssnano			= require('cssnano');
+const sourcemaps		= require('gulp-sourcemaps');
+const autoprefixer		= require('autoprefixer');
 
-var paths = {
+const paths = {
 	src: {
 		sass:	'src/sass/',
 		css: 	'src/css/'
 	},
     dist: {
-        css:    'dist/css/'
+		path: 	'dist/css/',
+		css:    'ubcclf.css',
+		minify_css: 'ubcclf.min.css'
     }
 };
 
@@ -22,27 +25,40 @@ var paths = {
  *
  ***************************************/
 
-gulp.task('styles', function() {
-	return gulp.src(paths.src.sass + 'MAIN.scss')
-		.pipe(sourcemaps.init())
+function styles() {
+	return src(paths.src.sass + 'MAIN.scss')
 		.pipe(sass().on('error', sass.logError))
-		.pipe(rename('ubcclf.css'))
-		.pipe(autoprefixer({
-			browsers: ['last 6 versions']
-		}))
+		.pipe(rename(paths.dist.css))
+		.pipe(dest(paths.dist.path))
+};
+
+function autoprefix() {
+	var plugins = [
+		autoprefixer()
+	];
+	return src(paths.dist.path + paths.dist.css)
+		.pipe(sourcemaps.init())
+		.pipe(postcss(plugins))
 		.pipe(sourcemaps.write('./'))
-		.pipe(gulp.dest(paths.dist.css))
-});
+		.pipe(dest(paths.dist.path))
+};
 
-gulp.task('minify', function() {
-	return gulp.src(paths.dist.css + '/ubcclf.css')
-		.pipe(nano({discardComments: {removeAll: true}, zindex: false}))
-		.pipe(rename('ubcclf.min.css'))
-		.pipe(gulp.dest(paths.dist.css))
-});
+function minify() {
+	var plugins = [
+        cssnano()
+    ];
+	return src(paths.dist.path + paths.dist.css)
+		.pipe(postcss(plugins))
+		.pipe(rename(paths.dist.minify_css))
+		.pipe(dest(paths.dist.path))
+};
 
-gulp.task('watch', function(){
-	gulp.watch(paths.src.sass + '**/*.scss', gulp.series('styles', 'minify'));
-});
+function watcher() {
+	watch(paths.src.sass + '**/*.scss', series(styles, autoprefix, minify));
+};
 
-gulp.task('default', gulp.series('styles', 'minify', 'watch'));
+exports.watch = series(watcher);
+exports.styles = series(styles);
+exports.autoprefix = series(autoprefix);
+exports.minify = series(minify);
+exports.default = series(styles, autoprefix, minify, watcher);
