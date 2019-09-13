@@ -1,1 +1,6 @@
-last 6 versions
+# 90.56% coverage as of September 2019
+
+defaults
+last 2 versions
+IE 11
+not dead
