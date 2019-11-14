@@ -1,0 +1,55 @@
+@charset 'UTF-8';
+
+/**
+* 1. Configuration and helpers
+*/
+
+/* Add CSS variables (uses postcss-simple-vars) */
+@import "abstracts/variables.css";
+
+/**
+* 2. Vendors
+*/
+
+/* Add normalize and general base styles */
+
+/* This autoprefixer option enables IE11 prefixing of CSS Grid. done in this file so all css grid uses are covered - see
+https://github.com/postcss/autoprefixer#does-autoprefixer-polyfill-grid-layout-for-ie */
+
+/* autoprefixer grid: autoplace */
+@import "tailwindcss/base";
+
+/**
+* 3. Base stuff
+*/
+@import "base/base.css";
+@import "base/fonts.css";
+@import "base/typography.css";
+@import "base/helpers.css";
+
+/**
+* 4. Layout-related sections
+*/
+@import "layout/header.css";
+@import "layout/footer.css";
+
+/**
+* 5. Components
+*/
+@import "tailwindcss/components";
+@import "components/button.css";
+
+/**
+* 6. Page-specific styles
+*/
+@import "pages/home.css";
+
+/**
+* 7. Themes
+*/
+@import "themes/default.css";
+
+/**
+* Add tailwind's utility classes last so that they take precedence
+**/
+@import "tailwindcss/utilities";
