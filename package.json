@@ -8,11 +8,10 @@
 		"lint:css": "stylelint \"src/**/*.css\" || exit 0",
 		"lint:fix-css": "stylelint \"src/**/*.css\" --fix || exit 0",
 		"build:css": "cross-env NODE_ENV=development postcss src/css/MAIN.css -o build/css/styles.all.css",
-		"build:js": "babel src/html/js --out-file build/js/ubc.all.js --ignore \"src/html/js/libs/*\"",
 		"build:dev": "npm run development",
-		"development": "cross-env NODE_ENV=development postcss src/css/MAIN.css -o build/css/styles.all.css && babel src/html/js --out-file build/js/ubc.all.js --ignore \"src/html/js/libs/*\" --source-maps",
+		"development": "cross-env NODE_ENV=development postcss src/css/MAIN.css -o build/css/styles.all.css",
 		"build:prod": "npm run production",
-		"production": "cross-env NODE_ENV=production postcss src/css/MAIN.css -o dist/css/styles.all.css && babel src/html/js --out-file dist/js/ubc.all.js --ignore \"src/html/js/libs/*\" --presets minify"
+		"production": "cross-env NODE_ENV=production postcss src/css/MAIN.css -o dist/css/styles.all.css"
 	},
 	"repository": {
 		"type": "git",
