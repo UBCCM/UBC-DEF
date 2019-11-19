@@ -7,39 +7,17 @@ module.exports = {
 			'black': '#000',
 			'white': '#fff',
 			'ubc-blue': '#002145',
-			// rgb - (0,33,69)
-			'ubc-blue-sea': '#003A79',
-			// rgb - (0,58,121)
-			'ubc-blue-cobalt': '#0055b7',
-			// rgb - (0,85,183)
-			//'ubc-blue-cerulean': '#00a7e1',
-			// rgb - (0,167,225)
-			'ubc-blue-neptune': '#40b4e5',
-			// rgb - (64,180,229)
-			//'ubc-blue-sky': '#6ec4e8',
-			// rgb - (110,196,232)
-			'ubc-blue-cornflower': '#97d4e9',
-			// rgb - (151,212,233)
-			'ubc-blue-polar': '#e1f3f9',
-			// rgb - (255,243,249)
 			'ubc-alert': '#ff7c7c',
-			// rgb - (255,124,124)
 			'ubc-warning': '#f8e605',
-			// rgb - (248,230,5)
 			'ubc-success': '#57edae',
-			// rgb - (87,237,174)
 			'unit-primary': 'var(--color-primary)',
 			'unit-secondary': 'var(--color-secondary)',
 			grey: {
 				50: '#fafafa',
 				100: '#f5f5f5',
-				//200: '#eee',
 				300: '#e0e0e0',
-				//400: '#bdbdbd',
 				500: '#9e9e9e',
-				//600: '#757575',
 				700: '#616161',
-				//800: '#424242',
 				900: '#212121',
 			},
 		},
@@ -142,7 +120,6 @@ module.exports = {
 		resize: [],
 		stroke: [],
 		textColor: ['responsive', 'hover', 'focus', 'group-hover'],
-		//wordBreak: false,
 	},
 	plugins: [],
 }
