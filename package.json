@@ -1,35 +1,52 @@
 {
-  "name": "ubc-clf8",
-  "version": "0.0.1",
-  "description": "Common Look and Feel framework for UBC",
-  "main": "gulpfile.js",
-  "scripts": {
-    "test": "snyk test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/UBCCM/ubc-clf8.git"
-  },
-  "keywords": [
-    "clf",
-    "ubc"
-  ],
-  "author": "UBC Communications & Marketing",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/UBCCM/ubc-clf8/issues"
-  },
-  "homepage": "https://github.com/UBCCM/ubc-clf8#readme",
-  "dependencies": {
-    "autoprefixer": "^9.6.1",
-    "gulp": "^4.0.2",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5"
-  },
-  "devDependencies": {
-    "cssnano": "^4.1.10",
-    "gulp-postcss": "^8.0.0",
-    "snyk": "^1.221.1"
-  }
+	"name": "ubc-clf8",
+	"version": "0.0.1",
+	"description": "Common Look and Feel framework for UBC",
+	"main": "package.scripts.js",
+	"scripts": {
+		"test": "snyk test",
+		"lint:css": "stylelint \"src/**/*.css\" || exit 0",
+		"lint:fix-css": "stylelint \"src/**/*.css\" --fix || exit 0",
+		"build:css": "cross-env NODE_ENV=development postcss src/css/MAIN.css -o build/css/styles.all.css",
+		"build:dev": "npm run development",
+		"development": "cross-env NODE_ENV=development postcss src/css/MAIN.css -o build/css/styles.all.css",
+		"build:prod": "npm run production",
+		"production": "cross-env NODE_ENV=production postcss src/css/MAIN.css -o dist/css/styles.all.css"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/UBCCM/ubc-clf8.git"
+	},
+	"keywords": [
+		"clf",
+		"ubc"
+	],
+	"author": "UBC Communications & Marketing",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/UBCCM/ubc-clf8/issues"
+	},
+	"homepage": "https://github.com/UBCCM/ubc-clf8#readme",
+	"engines": {
+		"yarn": ">= 1.6",
+		"node": ">= 8.11"
+	},
+	"dependencies": {
+		"autoprefixer": "^9.7.1",
+		"tailwindcss": "^1.1.3"
+	},
+	"devDependencies": {
+		"@fullhuman/postcss-purgecss": "^1.3.0",
+		"cross-env": "^6.0.3",
+		"cssnano": "^4.1.10",
+		"postcss-cli": "^6.1.3",
+		"postcss-custom-properties": "^9.0.2",
+		"postcss-import": "^12.0.1",
+		"postcss-simple-vars": "^5.0.2",
+		"snyk": "^1.247.1",
+		"stylelint": "^11.1.1",
+		"stylelint-config-rational-order": "^0.1.2",
+		"stylelint-config-standard": "^19.0.0",
+		"stylelint-order": "^3.1.1"
+	}
 }
