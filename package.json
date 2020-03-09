@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/UBCCM/ubc-clf8#readme",
   "dependencies": {
-    "autoprefixer": "^9.6.1",
+    "autoprefixer": "^9.7.3",
     "gulp": "^4.0.2",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
