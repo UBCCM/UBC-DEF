@@ -14,11 +14,14 @@ A clear and concise description of what the problem is. Ex. I'm always frustrate
 
 **Proposed solution**  
 A clear and concise description of what you want to happen.
-- Responsive behaviour considerations
-- User experience considerations
-- Accessibility considerations and test conducted
--- Accessiblity checker: https://achecker.ca/checker/index.php
--- ARIA Practices: https://www.w3.org/TR/wai-aria-practices/
+
+*Responsive behaviour considerations*
+
+*User experience considerations*
+
+*Accessibility considerations and test conducted*
+- Accessiblity checker: https://achecker.ca/checker/index.php
+- ARIA Practices: https://www.w3.org/TR/wai-aria-practices/
 
 
 **Alternatives considered**  
