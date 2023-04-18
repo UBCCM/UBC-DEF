@@ -30,6 +30,6 @@
   "devDependencies": {
     "cssnano": "^4.1.10",
     "gulp-postcss": "^8.0.0",
-    "snyk": "^1.221.1"
+    "snyk": "^1.1142.0"
   }
 }
